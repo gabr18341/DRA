@@ -64,13 +64,13 @@
     <!-- start - Header -->
     <header>
         <div class="container p-2">
-            <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex justify-content-center justify-content-md-between align-items-center">
                 <div class="header-logo p-1">
                     <a href="index.html">
                         <img src="assets/Dra-header-LOGO.svg" alt="">
                     </a>
                 </div>
-                <div class="contact-header-box d-flex p-1">
+                <div class="contact-header-box d-none d-md-flex p-1">
                     <div class="contact-box d-flex align-items-center ">
                         <span>
                             <i class='bx bxs-phone'></i>
@@ -101,11 +101,19 @@
                     <a href="#">Our Packs</a>
                     <a href="shop.html">Our Shop</a>
                     <a href="Contact.html">Contact-us</a>
+                    <div id="close-menu" class="mobile-icons">
+                        <i class='bx bx-x' ></i>
+                    </div>
                 </nav>
                 <div>
+                    <div id="mobile-menu" class="mobile-nav">
+                        <i class='bx bx-menu'></i>
+                    </div>
+
                     <a href="tel:+966920012778" class="main-btn">
                         <span>Call Now</span>
                     </a>
+                    
                 </div>
             </div>
         </div>
@@ -221,12 +229,13 @@
                     <li><button>Social Media Marketing</button></li>
                 </ul>
                 <div class="shop-container mt-4">
-                    <div class="product-item p-1 d-flex align-items-center gap-2">
+                    <div class="product-item p-2 d-flex align-items-center gap-2">
                         <div class="img-container">
                             <img src="https://i0.wp.com/dra.sa/wp-content/uploads/2024/07/Package-1.png?fit=1080%2C1080&ssl=1"
                                 alt="">
+                            <div class="add-cart"><span>+</span></div>
                         </div>
-                        <div class="product-content">
+                        <div class="product-content p-1">
                             <h6>Growth Package</h6>
                             <div class="stars-box d-flex align-items-center g-1 mb-2">
                                 <i class='bx bx-star'></i>
@@ -543,7 +552,7 @@
     <!-- footer /**************************************/ -->
      <footer>
         <div class="container py-5">
-            <div class="d-flex ">
+            <div class="d-flex flex-wrap">
                 <div class="col-12 px-2 col-md-6 col-lg-3">
                     <div class="logo-footer"><img src="assets/Dra-header-LOGO.svg" alt=""></div>
                     <p>Together, we reach the summit.</p>
@@ -557,21 +566,21 @@
                         <a href="#" class="icon-box"><i class='bx bx-strikethrough' ></i></a>
                     </div>
                 </div>
-                <div class="col-6 px-4 col-lg-3">
+                <div class="col-6 px-4 col-lg-3 mt-4 mt-md-0">
                     <h6>DRA Company</h6>
                     <ul>
                         <li><a href="#">Our Shop</a></li>
                         <li><a href="#">Contact Us</a></li>
                     </ul>
                 </div>
-                <div class="col-6 px-4 col-lg-3">
+                <div class="col-6 px-4 col-lg-3 mt-4 mt-lg-0">
                     <h6>Help</h6>
                     <ul>
                         <li><a href="#">Privacy Policy</a></li>
                         <li><a href="#"> Refunds and Returns</a></li>
                     </ul>
                 </div>
-                <div class="col-12 px-2 col-md-6 col-lg-3">
+                <div class="col-12 px-2 col-md-6 col-lg-3 mt-4 mt-lg-0">
                     <h6>Newsletter</h6>
                     <p>Sign up for our newsletter to receive our promotions</p>
                     <form>
@@ -598,5 +607,7 @@
     <script src="lib/aos/aos.js"></script>
     <!-- filter animation -->
     <script src="lib/isotope-layout/isotope.pkgd.min.js"></script>
+    <!-- main js file ------------ -->
+     <script src="js/main.js"></script>
 
 </html>
