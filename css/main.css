@@ -10,8 +10,8 @@ html {
 }
 
 :root {
-    --main-color:#bbc723 ;
-    --light-color: #b2e527;
+    --main-color:#acd147 ;
+    --light-color: #acd147;
     --sec-color: #143745;
     --text-color:#666;
     --bg-section: #f4f3f8;
@@ -895,7 +895,7 @@ a {
 
 .Our-Partners .tutorial {
     min-height: 50vh;
-    max-height: 500px;
+    max-height: 400px;
     width: 100%;
     margin: 0 auto;
     display: flex;
@@ -922,7 +922,7 @@ a {
   }
   .Our-Partners .tutorial .item img {
     width: 200px;
-    aspect-ratio: 3/2;
+    aspect-ratio: 4/2;
     -o-object-fit: contain;
     object-fit: contain;
     mix-blend-mode: color-burn;
@@ -933,6 +933,14 @@ a {
     -moz-transition: 0.5s;
     -ms-transition: 0.5s;
     -o-transition: 0.5s;
+    box-shadow: 15px 18px 20px 0px rgba(2.000000000000001,8.000000000000025,22,.1);
+    border-radius: 14px;
+    -webkit-border-radius: 14px;
+    -moz-border-radius: 14px;
+    -ms-border-radius: 14px;
+    -o-border-radius: 14px;
+    padding: 14px;
+    background-color: white;
 }
 .Our-Partners .tutorial .item img:hover {
     filter: grayscale(0);
