@@ -417,6 +417,10 @@ a {
 .shop-section {
     margin: 50px 0;
 }
+.shop-section ul {
+    padding: 0 ;
+}
+
 .shop-section .nav-shop-filter button {
     padding: 5px 12px;
     border-radius: 6px;
@@ -920,6 +924,9 @@ a {
     animation-delay: -25s;
     -webkit-animation: scroll2 50s linear infinite;
   }
+  .Our-Partners .tutorial .scroller:hover {
+    animation-play-state: paused;
+  }
   .Our-Partners .tutorial .item img {
     width: 200px;
     aspect-ratio: 4/2;
@@ -1237,4 +1244,15 @@ footer .img-bottom-footer img {
         width: calc(100% / 2);
         justify-content: start;
     }
+    .offers-section .offer-img iframe {
+
+        height: 400px;
+    }
+    .newslitter h5 {
+        padding-bottom: 10px !important;
+        text-align: center;
+    } 
+    .newslitter a {
+        margin-bottom: 2rem !important;
+    } 
   }
