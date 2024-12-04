@@ -1,0 +1,133 @@
+/*--------------------------------------------------------------
+# Contact Section
+--------------------------------------------------------------*/
+:root {
+    --main-color:#acd147 ;
+    --light-color: #acd147;
+    --sec-color: #143745;
+    --text-color:#666;
+    --bg-section: #f4f3f8;
+}
+.page-title {
+    background-image: url(../assets/contact-banner-1024x388.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #9797a5;
+}
+.page-title p {
+    color: var(--bg-section);
+}
+.section-title {
+    color: var(--bg-section);
+}
+.contact .info-item {
+    background-color: white;
+    padding: 20px 0 30px 0;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .contact .info-item i {
+    font-size: 20px;
+    color: var(--main-color);
+    width: 56px;
+    height: 56px;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    transition: all 0.3s ease-in-out;
+    border-radius: 50%;
+    border: 2px dotted color-mix(in srgb, var(--main-color), transparent 40%);
+  }
+  
+  .contact .info-item h3 {
+    font-size: 20px;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 10px 0;
+  }
+  
+  .contact .info-item p {
+    padding: 0;
+    margin-bottom: 0;
+    font-size: 14px;
+  }
+  
+  .contact .php-email-form {
+    background-color: #fff;
+    height: 100%;
+    padding: 30px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  @media (max-width: 575px) {
+    .contact .php-email-form {
+      padding: 20px;
+    }
+  }
+  
+  .contact .php-email-form input[type=text],
+  .contact .php-email-form input[type=email],
+  .contact .php-email-form textarea {
+    font-size: 14px;
+    padding: 10px 15px;
+    box-shadow: none;
+    border-radius: 0;
+    color: var(--default-color);
+    background-color: #fff;
+    border-color: color-mix(in srgb, var(--text-color), transparent 80%);
+  }
+  
+  .contact .php-email-form input[type=text]:focus,
+  .contact .php-email-form input[type=email]:focus,
+  .contact .php-email-form textarea:focus {
+    border-color: var(--main-color);
+  }
+  
+  .contact .php-email-form input[type=text]::placeholder,
+  .contact .php-email-form input[type=email]::placeholder,
+  .contact .php-email-form textarea::placeholder {
+    color: color-mix(in srgb, var(--default-color), transparent 70%);
+  }
+  
+  .contact .php-email-form button[type=submit] {
+    color: var(--contrast-color);
+    background: var(--main-color);
+    border: 0;
+    padding: 10px 30px;
+    transition: 0.4s;
+    border-radius: 50px;
+  }
+  
+  .contact .php-email-form button[type=submit]:hover {
+    background: color-mix(in srgb, var(--main-color), transparent 20%);
+  }
+  label {
+    margin-left: 10px;
+  }
+
+  .section-title .span{
+    position: relative;
+    display: block;
+    animation: title-animation 4s cubic-bezier(0.69, 0.19, 0.28, 1.01) infinite backwards ;
+    -webkit-animation: title-animation 4s cubic-bezier(0.69, 0.19, 0.28, 1.01) infinite backwards ;
+}
+.section-title .span span {
+    animation: title-animation 4s cubic-bezier(0.69, 0.19, 0.28, 1.01) infinite backwards ;
+    -webkit-animation: title-animation 4s cubic-bezier(0.69, 0.19, 0.28, 1.01) infinite backwards ;
+    display: block;
+    overflow: hidden;
+    text-wrap: nowrap;
+}
+@keyframes title-animation {
+    0% { width: 0; }
+    50% { width: 200px; }
+    100% { width: 0;}
+}
+
+.contact .form-switch .form-check-input:checked ,
+.contact .form-switch .form-check-input:focus, 
+.contact .form-switch .form-check-input {
+    box-shadow: none !important;
+}
