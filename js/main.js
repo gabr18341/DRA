@@ -113,5 +113,3 @@ document.getElementById('close-menu').onclick = () => {
     document.querySelector('.nav-header').classList.remove('show-mobile-menu');
 }
 
-// AOS Animation
-AOS.init();
