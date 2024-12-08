@@ -53,9 +53,9 @@
     <link rel="stylesheet" href="lib/bootstrap-5.3.3-dist/css/bootstrap.min.css">
     <!-- animation aos -->
     <link rel="stylesheet" href="lib/aos/aos.css">
-    <!-- style fils -->
+    <!-- css fils -->
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/checkout.css">
     <!-- icon - Boxicons CSS -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
@@ -64,138 +64,152 @@
 
 <body>
     <!-- start - Header -->
-    <header>
-    </header>
+    <!-- <header>
+    </header> -->
     <!-- end - Header -->
-    <div class=" py-5 page-title">
+    <div class="checkout-header py-3" style="border-bottom: 1px solid #d8d8d8">
         <div class="container">
-            <h5 class="section-title">Do You  <span class="span"><span>Need Help?</span></span></h5>
-        <p class=" text-center">For further details, please reach</p>
+            <div class="logo"><img src="assets/Dra-header-LOGO.svg" height="50" alt=""></div>
         </div>
     </div>
-    <main class="py-5">
-        <!-- Contact Section -->
-        <section id="contact" class="contact section pt-4">
-
-            <div class="container">
-
-                <div class="row gy-4">
-
-                    <div class="col-lg-6">
-                        <div class="info-item d-flex flex-column justify-content-center align-items-center">
-                            <i class='bx bx-target-lock'></i>
-                            <h3>Address</h3>
-                            <p class="text-black-50">Alkawther, Riyadh 13338 Saudi Arabia</p>
-                        </div>
-                    </div><!-- End Info Item -->
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="info-item d-flex flex-column justify-content-center align-items-center">
-                            <i class='bx bx-phone-call'></i>
-                            <h3>Call Us</h3>
-                            <p class="text-black-50">+966 9200 127 78</p>
-                        </div>
-                    </div><!-- End Info Item -->
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="info-item d-flex flex-column justify-content-center align-items-center">
-                            <i class='bx bx-envelope'></i>
-                            <h3>Email Us</h3>
-                            <a href="mailto:dra@kascco.sa">
-                                <p class="text-black-50">dra@kascco.sa</p>
-                            </a>
-                        </div>
-                    </div><!-- End Info Item -->
-
-                </div>
-
-                <div class="row gy-4 mt-1">
-                    <div class="col-lg-6">
-                        <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3619.7497529643965!2d46.623995274827074!3d24.872395144780896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2ee546861fbbe7%3A0xd7ad9e58d03887cb!2zS0FTQ0NPIEdyb3VwINmF2KzZhdmI2LnYqSDZg9mB2KfYrSDYp9mE2LTYsdmC!5e0!3m2!1sen!2ssa!4v1733273296409!5m2!1sen!2ssa"
-                            frameborder="0" style="border:0; width: 100%; height: 400px;" allowfullscreen=""
-                            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div><!-- End Google Maps -->
-
-                    <div class="col-lg-6">
-                        <form class="php-email-form">
-                            <div class="row gy-4">
-
-                                <div>
-                                    <input type="text" name="name" class="form-control" placeholder="Your Name"
-                                        required="">
-                                </div>
-                                <div>
-                                    <input type="text" name="name" class="form-control" placeholder="Phone Number"
-                                        required="">
-                                </div>
-
-                                <div>
-                                    <input type="email" class="form-control" name="email" placeholder="Your Email"
-                                        required="">
-                                </div>
-
-                                <div class="col-md-12">
-                                    <input type="text" class="form-control" name="subject"
-                                        placeholder="What is your industry ?" required="">
-                                </div>
-
-
-                                <div class="col-md-12">
-                                    <p>What services are you interested in ?</p>
-                                </div>
-                                <ul class="d-flex flex-column gap-2 m-0 mb-2">
-                                    <li  class="form-check form-switch"><input class="form-check-input" type="checkbox" role="switch" required=""
-                                            id="Marketing"><label for="Marketing">Digital Marketing</label></li>
-                                    <li class="form-check form-switch"><input  class="form-check-input" type="checkbox" role="switch" required="" id="Development"><label
-                                            for="Development">Website Building & Development</label></li>
-                                    <li class="form-check form-switch"> <input class="form-check-input" type="checkbox" role="switch"  required="" id="Management"><label
-                                            for="Management">Social Media Management</label></li>
-                                    <li class="form-check form-switch"> <input class="form-check-input" type="checkbox" role="switch"  required="" id="Design"><label for="Design">Graphic
-                                            Design & Content Creation</label></li>
-                                    <li class="form-check form-switch"> <input class="form-check-input" type="checkbox" role="switch"  required="" id="Others"><label
-                                            for="Others">Others..</label> </li>
-
-                                    <div class="col-md-12 mt-3">
-                                        <textarea class="form-control" name="message" rows="6" placeholder="Message"
-                                            required=""></textarea>
-                                    </div>
-                                    <div class="col-md-12 text-center mt-3">
-
-                                        <button type="submit">Send Message</button>
-                                    </div>
-
+    <main class="my-5">
+        <div class="container">
+            <h4>Checkout</h4>
+            <div class="mt-4 d-flex flex-wrap justify-content-between gap-2">
+                <div class="col-12 col-lg-7 card p-4">
+                    <h6>My Contact</h6>
+                    <p class="text-alert">Already have an account? <a href="#">Log in</a></p>
+                    <div class="divider-checkout"><span>Or continue as a guest</span></div>
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Phone</label>
+                        <input type="tel" class="form-control" id="phone" placeholder="05********">
+                    </div>
+                    <div class="mb-1">
+                        <label for="exampleFormControlInput1" class="form-label">Email address </label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1"
+                            placeholder="name@example.com">
+                    </div>
+                    <p style="font-size: 12px;" class="text-black-50">Order number and receipt will be sent to this
+                        email address.</p>
+                    <div class="form-check mt-1">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label fw-normal" for="flexCheckDefault">
+                            I would like to receive exclusive emails with discounts and product information.
+                        </label>
+                    </div>
+                    <div class="divider-checkout my-3"></div>
+                    <h6 class="mb-3">Billing to</h6>
+                    <div class="mt-3">
+                        <div class="row">
+                            <div class="col">
+                                <label for="first-name" class="form-label">Email address </label>
+                                <input type="text" class="form-control" placeholder="First name" id="first-name">
                             </div>
-                        </form>
-                    </div><!-- End Contact Form -->
+                            <div class="col">
+                                <label for="last-name" class="form-label">Email address </label>
+                                <input type="text" class="form-control" placeholder="Last name" id="last-name">
+                            </div>
+                            <div class="mt-2">
+                                <label for="Company-name" class="form-label">Company name (optional)</label>
+                                <input type="text" class="form-control" id="Company-name">
+                            </div>
+                            <div class="mt-3">
+                                <label class="form-label">Country </label>
+                                <select class="form-select">
+                                    <option selected>Saudi Arabia</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
 
+                            <div class="mt-2">
+                                <label for="Company-name" class="form-label">Town / City</label>
+                                <input type="text" class="form-control" id="Company-name">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider-checkout my-3"></div>
+                    <h6 class="mt-2">Payment method</h6>
+                    <div class="rounded-1 border p-2">
+                        <div class="rounded-2 bg-body-secondary p-3">
+                            <div class="form-check mb-1">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                    id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Visa
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider-checkout my-3"></div>
+                    <div class="mt-3">
+                        <p>Your personal data will be used for the processing of your order, 
+                            to accompany you during your visit to the website, and for other 
+                            reasons described in our privacy policy.
+                        </p>
+                        <div class="form-check mt-1">
+                            <input class="form-check-input" type="checkbox" value="" id="agree">
+                            <label class="form-check-label fw-normal" for="agree">
+                                I have read and agree to the <a href="#">terms and conditions </a>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <button class="main-btn w-100">Place Order</button>
+                    </div>
                 </div>
-
+                <div class="col-12 col-lg-4 border rounded py-2 px-3 cart-container">
+                    <div class="rounded-2 border">
+                        <div class="d-flex align-items-center justify-content-between p-2 border-bottom">
+                            <h6 class="py-1 m-0">Order summary</h6>
+                            <a href="#">Edit cart</a>
+                        </div>
+                        <div class="product-container py-2 px-1">
+                            <div class="product">
+                                <div class="img-product"><img src="https://i0.wp.com/dra.sa/wp-content/uploads/2024/07/Package-03.png?resize=300%2C300&ssl=1" alt=""></div>
+                                <div class="d-flex justify-content-between flex-grow-1">
+                                    <div class="product-det">
+                                        <p>Product name 1</p>
+                                        <p class="d-flex gap-1 m-0"> <span>رس.</span> 12.00</p>
+                                    </div>
+                                    <div class="total-price d-flex gap-1">
+                                        <span>رس.</span>
+                                        <p>12.00</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product">
+                                <div class="img-product"><img src="https://i0.wp.com/dra.sa/wp-content/uploads/2024/07/Package-03.png?resize=300%2C300&ssl=1" alt=""></div>
+                                <div class="d-flex justify-content-between flex-grow-1">
+                                    <div class="product-det">
+                                        <p>Product name 1</p>
+                                        <p class="d-flex gap-1 m-0"> <span>رس.</span> 12.00</p>
+                                    </div>
+                                    <div class="total-price d-flex gap-1">
+                                        <span>رس.</span>
+                                        <p>12.00</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="subtotal-container d-flex justify-content-between  px-3 py-2 border-top align-items-center">
+                            <h6 class="m-0">Subtotal</h6>
+                            <p class="subtotal-price m-0">1230 .رس</p>
+                        </div>
+                        <div class="total-container d-flex justify-content-between px-3 py-2 border-top align-items-center">
+                            <h6 class="m-0">Total</h6>
+                            <p class="subtotal-price m-0">1230 .رس</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-        </section><!-- /Contact Section -->
-        <section class="py-2 newslitter">
-            <div class="container d-flex justify-content-center align-items-center gap-3 flex-wrap">
-                <h5 class="m-0 py-5 text-white">It's time to take your project to the top ! </h5>
-                <a href="contact.html" class="d-flex main-btn justify-content-center align-items-center gap-2"
-                    style="position: relative;"><i class='bx bxs-chevron-right'></i>Book your
-                    free consultation!</a>
-            </div>
-        </section>
+        </div>
     </main>
-
-    <!-- footer /**************************************/ -->
-    <footer>
-    </footer>
-    <!-- footer /**************************************/ -->
 
     <!-- liberaries -->
     <!-- bootstarap -->
     <script src="lib/bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
-    <!-- animation aos -->
-    <script src="lib/aos/aos.js"></script>
-    <!-- filter animation -->
-    <script src="lib/isotope-layout/isotope.pkgd.min.js"></script>
     <!-- main js file ------------ -->
     <script src="js/main.js"></script>
 

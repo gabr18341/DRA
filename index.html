@@ -62,7 +62,7 @@
 
 <body>
     <!-- start - Header -->
-    <header>
+    <header id="header">
     </header>
     <!-- end - Header -->
     <main>
@@ -78,13 +78,13 @@
                             Benefit from the marketing expertise of our digital marketing
                             agency and a digital vision of your market to establish your presence .
                         </p>
-                        <div class="hero-boxes-number d-flex justify-content-between flex-wrap gap-1">
-                            <div class="box-num">
-                                <span>41+</span>
+                        <div class="hero-boxes-number d-flex justify-content-between flex-wrap gap-1 funfacts-area">
+                            <div class="box-num ">
+                                <span id="ClientsCounter" class=" d-flex">41+</span>
                                 <p>Happy Clients</p>
                             </div>
-                            <div class="box-num">
-                                <span>98%</span>
+                            <div class="box-num ">
+                                <span id="Satisfaction" class=" d-flex">98%</span>
                                 <p>Client Satisfaction</p>
                             </div>
                         </div>
@@ -94,7 +94,11 @@
                         </a>
                     </div>
                     <div class="col-12 col-md-6 hero-img">
-                        <img src="assets/Mda-DRA.png" alt="">
+                        <div class=" social-icon top-left"><img src="assets/hero-img/INSTAGRAM.png" alt=""></div>
+                        <div class="top-right social-icon "><img src="assets/hero-img/whatsapp.png" alt=""></div>
+                        <div class="bottom-left social-icon "><img src="assets/hero-img/facebook.png" alt=""></div>
+                        <div class="bottom-right social-icon "><img src="assets/hero-img/linkden.png" alt=""></div>
+                        <img src="assets/hero-img/Marketing Digital Agency10@3x.png" alt="">
                     </div>
                 </div>
             </div>
@@ -104,27 +108,28 @@
         <section class="services-section">
             <div class="container py-5">
                 <div class="services-container d-flex justify-content-between gap-3">
-                    <div class="services-box">
+                    <div  data-aos="fade-up"
+                    data-aos-duration="1000" class="services-box">
                         <img src="assets/social-media.gif" alt="">
                         <h5>
                             Social Media Management </h5>
                     </div>
-                    <div class="services-box">
+                    <div data-aos="fade-right" data-aos-duration="1000" class="services-box">
                         <img src="assets/social-marketing.gif" alt="">
                         <h5>
                             Advertising </h5>
                     </div>
-                    <div class="services-box">
+                    <div data-aos="flip-up" data-aos-duration="1000" class="services-box">
                         <img src="assets/software.gif" alt="">
                         <h5>
                             Website Development </h5>
                     </div>
-                    <div class="services-box">
+                    <div data-aos="fade-left" data-aos-duration="1000" class="services-box">
                         <img src="assets/faq.gif" alt="">
                         <h5>
                             Branding and Creative Services </h5>
                     </div>
-                    <div class="services-box">
+                    <div  data-aos="fade-down" data-aos-duration="1000" class="services-box">
                         <img src="assets/trending.gif" alt="">
                         <h5>
                             Photography and Videography</h5>
@@ -202,7 +207,7 @@
             <div class="container">
                 <h5 class="section-title">Our <span class="span"><span>PACK</span></span></h5>
                 <div class="price-card-container">
-                    <div class="card">
+                    <div data-aos-duration="1000" data-aos="zoom-in" class="card">
                         <h6 class="card__title">Starting package</h6>
                         <div class="card__body">
                             <p class="price"><span class="price__symbol">SAR</span>350</p>
@@ -218,7 +223,7 @@
                         </button>
                     </div>
 
-                    <div class="card">
+                    <div data-aos="zoom-in-down" data-aos-duration="1000" class="card">
                         <h6 class="card__title">Growth Package</h6>
                         <div class="card__body">
                             <p class="price"><span class="price__symbol">SAR</span>500</p>
@@ -236,7 +241,7 @@
                         </button>
                     </div>
 
-                    <div class="card main-pack">
+                    <div data-aos="zoom-in-left" data-aos-duration="1000" class="card main-pack">
                         <h6 class="card__title">Success Package</h6>
                         <div class="card__body">
                             <p class="price"><span class="price__symbol">SAR</span>700</p>
@@ -254,7 +259,7 @@
                         </button>
                     </div>
 
-                    <div class="card">
+                    <div data-aos="zoom-in-up" data-aos-duration="1000" class="card">
                         <h6 class="card__title">DRA Package</h6>
                         <div class="card__body">
                             <p class="price"><span class="price__symbol">SAR</span>1200</p>
@@ -279,8 +284,8 @@
         <section class="py-2 newslitter">
             <div class="container d-flex justify-content-center align-items-center gap-3 flex-wrap">
                 <h5 class="m-0 py-5 text-white">It's time to take your project to the top ! </h5>
-                <a href="#" class="d-flex main-btn justify-content-center align-items-center gap-2"
-                    style="background-color: #b2e527;position: relative;"><i class='bx bxs-chevron-right'></i>Book your
+                <a href="contact.html" class="d-flex main-btn justify-content-center align-items-center gap-2"
+                    style="position: relative;"><i class='bx bxs-chevron-right'></i>Book your
                     free consultation!</a>
             </div>
         </section>
@@ -289,7 +294,8 @@
             <div class="container">
                 <h5 class="section-title p-0">Our <span class="span"><span>VISION</span></span></h5>
                 <div class="vision-container d-flex align-items-center justify-content-between">
-                    <div class="vision-content col-12 col-md-5">
+                    <div  data-aos="fade-right"
+                    data-aos-anchor-placement="center-bottom" class="vision-content col-12 col-md-5">
                         <h5>
                             The Digital Marketing Vision of the Agency for Hacking Growth
                         </h5>
@@ -313,10 +319,11 @@
                             </p>
                         </div>
                         <div class="mt-5">
-                            <button class="main-btn">Contauct Us</button>
+                            <button class="main-btn">Contact Us</button>
                         </div>
                     </div>
-                    <div class="vision-img col-12 col-md-6">
+                    <div  data-aos="fade-left"
+                    data-aos-anchor-placement="center-bottom" class="vision-img col-12 col-md-6">
                         <img src="assets/dra laptopp.webp" alt="">
                     </div>
                 </div>
@@ -494,6 +501,11 @@
         </section>
         <!-- end -  Partners -->
     </main>
+    <!-- go to top  -->
+     <a href="#header" class="go-top"><i class='bx bx-up-arrow-alt'></i></a>
+     <!-- Whatsapp icon -->
+      <a target="_blank" class="whatsapp-icon" href="https://api.whatsapp.com/send/?phone=966112336751&text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7+%D8%8C+%D9%87%D9%84+%D9%8A%D9%85%D9%83%D9%86%D9%86%D9%8A+%D8%A7%D9%84%D8%AD%D8%B5%D9%88%D9%84+%D8%B9%D9%84%D9%89+%D9%85%D8%B2%D9%8A%D8%AF+%D9%85%D9%86+%D8%A7%D9%84%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84+%D8%AD%D9%88%D9%84+%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%D9%83%D9%85%D8%9F&type=phone_number&app_absent=0">
+        <img height="50" src="assets/whatsapp-logo.svg" alt=""></a>
 
     <!-- footer /**************************************/ -->
      <footer>
@@ -555,5 +567,29 @@
     <script src="lib/isotope-layout/isotope.pkgd.min.js"></script>
     <!-- main js file ------------ -->
      <script src="js/main.js"></script>
+     <script>
+        var ClientsCounter = document.getElementById('ClientsCounter')
+        var SatisfactionCounter = document.getElementById('Satisfaction')
+
+        var h = 0;
+        setInterval(function() {
+            if (h == 41) {
+                clearInterval();
+            } else {
+                h++;
+                ClientsCounter.textContent = h + '+';
+            }
+        }, 100)
+        var s = 0;
+        setInterval(function() {
+            if (s == 98) {
+                clearInterval();
+            } else {
+                s++;
+                SatisfactionCounter.textContent = s + '%';
+            }
+        }, 50)
+     </script>
+      
 
 </html>

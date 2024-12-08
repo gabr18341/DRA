@@ -100,7 +100,7 @@ document.querySelector('footer').innerHTML = `
         <div class="bottom-footer">
             <div class="container d-flex align-items-center py-2">
                 <div class="img-bottom-footer"><img src="assets/vision_2030.png" alt=""></div>
-                <p class="flex-grow-1 fw-bold text-white d-flex justify-content-center align-items-center gap-1"><i class='bx bx-copyright' ></i>2024 DRA Company. All rights reserved.</p>
+                <p class="flex-grow-1 text-white d-flex justify-content-center align-items-center gap-1"><i class='bx bx-copyright' ></i>2024 DRA . All rights reserved.</p>
                 <div class=""></div>
             </div>
         </div>
@@ -112,3 +112,6 @@ document.getElementById('mobile-menu').onclick = () => {
 document.getElementById('close-menu').onclick = () => {
     document.querySelector('.nav-header').classList.remove('show-mobile-menu');
 }
+
+// AOS Animation
+AOS.init();
