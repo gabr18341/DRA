@@ -9,6 +9,10 @@ html {
     scroll-behavior: smooth;
 }
 
+.container {
+    overflow-x: hidden;
+}
+
 :root {
     --main-color:#acd147 ;
     --light-color: #acd147;
@@ -216,7 +220,7 @@ a {
     justify-content: center;
     align-items: center;
     position: fixed;
-    top: 20px;
+    top: 80px;
     left: -100%;
     opacity: 0;
     visibility: hidden;
@@ -1319,9 +1323,22 @@ footer .img-bottom-footer img {
   }
 
   @media screen and (max-width: 779px) {
+    header .container.p-2 {
+        position: relative;
+        z-index: 1000;
+        background-color: white;
+    }
     .hero-section .hero-img {
         text-align: right;
         margin-top: 80px;
+    }
+    .hero-section .hero-img .social-icon {
+        max-width: 40px;
+    }
+    .hero-section .hero-img .social-icon.top-left ,
+    .hero-section .hero-img .social-icon.top-right ,
+    .hero-section .hero-img .social-icon.bottom-right{
+        max-width: 60px;
     }
     .hero-section .hero-img img {
         max-height: 350px;
