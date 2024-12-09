@@ -9,9 +9,7 @@ html {
     scroll-behavior: smooth;
 }
 
-.container {
-    overflow-x: hidden;
-}
+
 
 :root {
     --main-color:#acd147 ;
@@ -1269,6 +1267,9 @@ footer .img-bottom-footer img {
 
   /* responsive home page ------------------------------------------------- */
   @media screen and (max-width: 992px) {
+    .container {
+        overflow: hidden;
+    }
     .nav-header nav a ,
     .nav-header .main-btn {
         font-size: 12px;
