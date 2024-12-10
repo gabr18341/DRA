@@ -72,10 +72,15 @@
         <div class="container p-3 p-md-4 bg-white rounded-4 shadow">
             <div class="product-container d-flex flex-wrap gap-4">
                 <div class="product-img col-12 col-md-5">
+                    <div class="zoom-lens"></div>
                     <span class="search-icon">
                         <i class='bx bx-search'></i>
                     </span>
-                    <img src="https://i0.wp.com/dra.sa/wp-content/uploads/2024/07/Growth-Package.png?fit=1080%2C1080&ssl=1" alt="">
+                    <img class="zoom-image" src="https://i0.wp.com/dra.sa/wp-content/uploads/2024/07/Growth-Package.png?fit=1080%2C1080&ssl=1" alt="">
+                    <div class="popup-img">
+                        <span class="close"><i class='bx bx-x'></i></span>
+                        <img src="https://i0.wp.com/dra.sa/wp-content/uploads/2024/07/Growth-Package.png?fit=1080%2C1080&ssl=1" alt="">
+                    </div>
                 </div>
                 <div class="product-details  col-12 col-md-6">
                     <h3 class="product-title">Growth Package</h3>
@@ -98,7 +103,7 @@
                             <span class="count">1</span>
                             <span class="inc-btn">+</span>
                         </div>
-                        <button class="main-btn">Add To Cart</button>
+                        <button class="main-btn" onclick="showCart()">Add To Cart</button>
                     </div>
                     <ul class="mt-3">
                         <li><i class='bx bxs-check-shield'></i>Satisfaction Guaranteed</li>
@@ -115,21 +120,73 @@
                 <div class="related-products-container d-flex justify-content-between flex-wrap gap-2">
                     <div class="product-card flex-grow-1 flex-md-grow-0">
                         <div class="product-img">
+                            
                             <img src="https://i0.wp.com/dra.sa/wp-content/uploads/2024/07/Growth-Package.png?fit=1080%2C1080&ssl=1" alt="">
                         </div>
                         <div class="product-content">
-                            <h6>Succes Package</h6>
+                            <a href="product.html"><h6 class="text-black-50">Growth Package</h6></a>
                             <div class="product-price d-flex gap-1 align-items-center">
                                 <span>ر.س</span>
                                 <span class="price">800.00</span>
                             </div>   
-                            <button class="main-btn mt-2">Add To Cart</button>
+                            <button class="main-btn mt-2" onclick="showCart()">Add To Cart</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </main>
+    <!-- start - Cart ---------------------- -->
+    <div class="cart-section d-flex">
+        <div onclick="showCart()" class="overlay-cart flex-grow-1"></div>
+        <div class="cart-container">
+            <div class="cart-header d-flex justify-content-between align-items-center">
+                <h6>Your Cart</h6>
+                <span onclick="showCart()" class="close"><i class='bx bx-x-circle' ></i></span>
+            </div>
+            <div class="cart-body">
+                <div class="product-container">
+                    <div class="product-card d-flex gap-2">
+                        <div class="img"><img src="https://i0.wp.com/dra.sa/wp-content/uploads/2024/07/Growth-Package.png?resize=300%2C300&ssl=1" alt=""></div>
+                        <div class="content d-flex align-items-center justify-content-between flex-grow-1">
+                            <div>
+                                <h6>Growth Package</h6>
+                                <p class="d-flex align-items-center gap-2"> <span class="qu">X2</span>: <span class="price">120 رس .</span> </p>
+                                <p class="total-price">240 رس.</p>
+                            </div>
+                            <div class="delate"><i class='bx bx-trash' ></i></div>
+                        </div>
+                    </div>
+                    <div class="product-card d-flex gap-2">
+                        <div class="img"><img src="https://i0.wp.com/dra.sa/wp-content/uploads/2024/07/Growth-Package.png?resize=300%2C300&ssl=1" alt=""></div>
+                        <div class="content d-flex align-items-center justify-content-between flex-grow-1">
+                            <div>
+                                <h6>Growth Package</h6>
+                                <p class="d-flex align-items-center gap-2"> <span class="qu">X2</span>: <span class="price">120 رس .</span> </p>
+                                <p class="total-price">240 رس.</p>
+                            </div>
+                            <div class="delate"><i class='bx bx-trash' ></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-footer">
+                <h6>
+                    <span>Subtotal:</span>
+                    <span class="Subtotal">480 رس.</span>
+                </h6>
+                <p>Shipping, taxes, and discounts calculated at checkout.</p>
+                <div class="d-flex gap-1 mb-1">
+                    <!-- <button class="main-btn flex-grow-1">View Cart</button> -->
+                    <button class="main-btn flex-grow-1" onclick="showCart()">Continue Shopping</button>
+                </div>
+                <a href="checkout.html" class="main-btn">Checkout : 
+                    1,955.00 ر.س</a>
+            </div>
+        </div>
+        
+     </div>
+    <!-- end - Cart ---------------------- -->
 
     <!-- footer /**************************************/ -->
      <footer>
@@ -145,5 +202,6 @@
     <script src="lib/isotope-layout/isotope.pkgd.min.js"></script>
     <!-- main js file ------------ -->
      <script src="js/main.js"></script>
+     <script src="js/product.js"></script>
 
 </html>

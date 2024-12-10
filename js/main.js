@@ -1,5 +1,24 @@
 const currentPage = window.location.pathname
-console.log(currentPage);
+let currentLanguage = localStorage.getItem('lang') || 'en';
+
+// handel language change
+
+function changeLang(lang) {
+    localStorage.setItem('lang', lang);
+    document.documentElement.lang = lang;
+    currentLanguage = lang;
+
+    if (lang === 'en') {
+        document.body.classList.remove('rtl')
+        document.body.dir = 'ltr';
+        
+    } else {
+        document.body.classList.add('rtl')
+        document.body.dir = 'rtl'
+    }
+}
+
+changeLang(currentLanguage);
 
 document.querySelector('header').innerHTML = `
 <div class="container p-2">
@@ -14,6 +33,7 @@ document.querySelector('header').innerHTML = `
             <span>
                 <i class='bx bxs-phone'></i>
             </span>
+            
             <div>
                 <h6>Call Us</h6>
                 <p>920012778</p>
@@ -48,6 +68,13 @@ document.querySelector('header').innerHTML = `
         <div id="mobile-menu" class="mobile-nav">
             <i class='bx bx-menu'></i>
         </div>
+        <button class="main-btn btn-sm dropdown-toggle fs-6 " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            English (en)
+        </button>
+        <ul class="dropdown-menu">
+        <li><span onclick="changeLang('en')" class="dropdown-item active" >en</span></li>
+            <li><span onclick="changeLang('ar')" class="dropdown-item " >ar</span></li>
+        </ul>
 
         <a href="tel:+966920012778" class="main-btn">
             <span>Call Now</span>
@@ -112,4 +139,11 @@ document.getElementById('mobile-menu').onclick = () => {
 document.getElementById('close-menu').onclick = () => {
     document.querySelector('.nav-header').classList.remove('show-mobile-menu');
 }
+
+// handel show cart ;
+function showCart() {
+    document.querySelector('.cart-section').classList.toggle('show-cart');
+}
+
+
 
