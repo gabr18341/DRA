@@ -53,7 +53,9 @@
     <link rel="stylesheet" href="lib/bootstrap-5.3.3-dist/css/bootstrap.min.css">
     <!-- animation aos -->
     <link rel="stylesheet" href="lib/aos/aos.css">
+    <!-- css fils -->
     <link rel="stylesheet" href="css/main.css">
+    <!-- <link rel="stylesheet" href="css/checkout.css"> -->
     <!-- icon - Boxicons CSS -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
@@ -65,49 +67,64 @@
     <header>
     </header>
     <!-- end - Header -->
-    <main>
-        <!-- start - shop section  -->
-        <section class="shop-section">
-            <div class="container">
-                <ul class="d-flex justify-content-center gap-2 align-items-center nav-shop-filter">
-                    <li><button data-filter="all">Non classe</button></li>
-                    <li><button data-filter="advertising">Advertising</button></li>
-                    <li><button data-filter="services">Branding and Creative Services</button></li>
-                    <li><button data-filter="development">Development</button></li>
-                    <li><button data-filter="pack">Our Pack</button></li>
-                    <li><button data-filter="marketing">Social Media Marketing</button></li>
-                </ul>
-                <div class="shop-container mt-4">
-                    <div class="product-item p-2 d-flex align-items-center gap-2">
-                        <div class="img-container">
-                            <img src="https://i0.wp.com/dra.sa/wp-content/uploads/2024/07/Package-1.png?fit=1080%2C1080&ssl=1"
-                                alt="">
-                            <div class="add-cart"><span onclick="showCart()">+</span></div>
-                        </div>
-                        <div class="product-content p-1">
-                            <a href="product.html"><h6>Growth Package</h6></a>
-                            <div class="stars-box d-flex align-items-center g-1 mb-2">
-                                <i class='bx bx-star'></i>
-                                <i class='bx bx-star'></i>
-                                <i class='bx bx-star'></i>
-                                <i class='bx bx-star'></i>
-                                <i class='bx bx-star'></i>
+    
+    <main class="cart-page">
+        <div class="container mt-3">
+            <h2 style="color: #143745;font-weight: bold;margin-bottom: 30px;">Cart</h2>
+            <h6>Cart Summary</h6>
+            <div class="cart-container">
+                <table class="table table-striped table-hover table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Product</th>
+                        <th scope="col">Product Name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Subtotal</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row"><i class='bx bx-x' ></i></th>
+                        <td><img width="40" height="40" src="https://i0.wp.com/dra.sa/wp-content/uploads/2024/07/Package-1.png?resize=300%2C300&ssl=1" alt=""></td>
+                        <td>Starting package</td>
+                        <td>402.50 ر.س	</td>
+                        <td>
+                            <div class="d-flex gap-2 control-btns">
+                                <span onclick="handelCountInCart(this)" data-calc="dec" class="dec-btn">-</span>
+                                <span class="count">1</span>
+                                <span onclick="handelCountInCart(this)" data-calc="inc" class="inc-btn">+</span>
                             </div>
-                            <span class="price">575.00 رس</span>
-                        </div>
-                    </div>
+                        </td>
+                        <td>
+                           <p> 4,830.00 ر.س (incl. VAT)</p>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+            <div class="my-2 d-flex justify-content-end">
+                <button class="main-btn">Update Cart</button>
+            </div>
+            <div class="card p-3 my-3">
+                <h5>Cart Totals</h5>
+                <div class="card-body">
+                    <p class="p-3 border-bottom d-flex justify-content-between align-items-center">
+                        <span>Subtotal</span>
+                        <span>4,830.00 ر.س</span>
+                    </p>
+                    <p class="p-3 border-bottom d-flex justify-content-between align-items-center">
+                        <span>Total</span>
+                        <span>4,830.00 ر.س</span>
+                    </p>
+                </div>
+                <div class="card-footer d-flex">
+                    <button class="main-btn">Proceed to Checkout</button>
                 </div>
             </div>
-        </section>
-        <!-- end - shop section  -->
-        <section class="py-2 newslitter">
-            <div class="container d-flex justify-content-center align-items-center gap-3 flex-wrap">
-                <h5 class="m-0 py-5 text-white">It's time to take your project to the top ! </h5>
-                <a href="contact.html" class="d-flex main-btn justify-content-center align-items-center gap-2"
-                    style="position: relative;"><i class='bx bxs-chevron-right'></i>Book your
-                    free consultation!</a>
-            </div>
-        </section>
+        </div>
+
     </main>
     <!-- start - Cart ---------------------- -->
     <div class="cart-section d-flex">
@@ -160,24 +177,15 @@
         
      </div>
     <!-- end - Cart ---------------------- -->
-     <!-- go to top  -->
-     <a href="#header" class="go-top"><i class='bx bx-up-arrow-alt'></i></a>
      <!-- cart icon -->
      <span class="cart-icon" onclick="showCart()"><i class='bx bx-cart-alt' ></i></span>
 
-    <!-- footer /**************************************/ -->
-     <footer>
-     </footer>
-    <!-- footer /**************************************/ -->
+    <footer></footer>
 
     <!-- liberaries -->
     <!-- bootstarap -->
     <script src="lib/bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
-    <!-- animation aos -->
-    <script src="lib/aos/aos.js"></script>
-    <!-- filter animation -->
-    <script src="lib/isotope-layout/isotope.pkgd.min.js"></script>
     <!-- main js file ------------ -->
-     <script src="js/main.js"></script>
+    <script src="js/main.js"></script>
 
 </html>

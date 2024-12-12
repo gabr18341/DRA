@@ -172,12 +172,12 @@
         <section class="shop-section">
             <div class="container">
                 <ul class="d-flex justify-content-center gap-2 align-items-center nav-shop-filter">
-                    <li><button>Non classé</button></li>
-                    <li><button>Advertising</button></li>
-                    <li><button>Branding and Creative Services</button></li>
-                    <li><button>Development</button></li>
-                    <li><button>Our Pack</button></li>
-                    <li><button>Social Media Marketing</button></li>
+                    <li><button data-filter="all">Non classe</button></li>
+                    <li><button data-filter="advertising">Advertising</button></li>
+                    <li><button data-filter="services">Branding and Creative Services</button></li>
+                    <li><button data-filter="development">Development</button></li>
+                    <li><button data-filter="pack">Our Pack</button></li>
+                    <li><button data-filter="marketing">Social Media Marketing</button></li>
                 </ul>
                 <div class="shop-container mt-4">
                     <div class="product-item p-2 d-flex align-items-center gap-2" >
@@ -542,7 +542,7 @@
                 </h6>
                 <p>Shipping, taxes, and discounts calculated at checkout.</p>
                 <div class="d-flex gap-1 mb-1">
-                    <!-- <button class="main-btn flex-grow-1">View Cart</button> -->
+                    <a href="cart.html" class="main-btn flex-grow-1">View Cart</a>
                     <button class="main-btn flex-grow-1" onclick="showCart()">Continue Shopping</button>
                 </div>
                 <a href="checkout.html" class="main-btn ">Checkout : 
@@ -554,6 +554,8 @@
     <!-- end - Cart ---------------------- -->
     <!-- go to top  -->
      <a href="#header" class="go-top"><i class='bx bx-up-arrow-alt'></i></a>
+     <!-- cart icon -->
+     <span class="cart-icon" onclick="showCart()"><i class='bx bx-cart-alt' ></i></span>
      <!-- Whatsapp icon -->
       <a target="_blank" class="whatsapp-icon" href="https://api.whatsapp.com/send/?phone=966112336751&text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7+%D8%8C+%D9%87%D9%84+%D9%8A%D9%85%D9%83%D9%86%D9%86%D9%8A+%D8%A7%D9%84%D8%AD%D8%B5%D9%88%D9%84+%D8%B9%D9%84%D9%89+%D9%85%D8%B2%D9%8A%D8%AF+%D9%85%D9%86+%D8%A7%D9%84%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84+%D8%AD%D9%88%D9%84+%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%D9%83%D9%85%D8%9F&type=phone_number&app_absent=0">
         <img height="50" src="assets/whatsapp-logo.svg" alt=""></a>

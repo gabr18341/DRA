@@ -1661,3 +1661,53 @@ footer .img-bottom-footer img {
 .cart-footer .main-btn:hover {
     background-color: var(--main-color);
 }
+
+.cart-icon {
+    position: fixed;
+    bottom: 60px;
+    right: 20px;
+    z-index: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--sec-color);
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+
+/* cart page -************************************* */
+.cart-page td ,
+.cart-page th {
+    text-align: center;
+}
+.cart-page .control-btns {
+    border: 1px solid #999;
+    width: 80px;
+    justify-content: space-between;
+    padding: 5px 10px;
+    margin: auto;
+}
+.cart-page .control-btns span:not(.count) {
+    cursor: pointer;
+}
+
+.cart-page .cart-container {
+    max-width: 100%;
+    overflow-x: auto;
+}
+.cart-page .cart-container table {
+    width: 1000px;
+    max-width: 100%;
+}
+.cart-page .cart-container table td:not(:first-child),
+.cart-page .cart-container table th:not(:first-child) {
+    min-width: 150px;
+}
