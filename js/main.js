@@ -55,8 +55,8 @@ document.querySelector('header').innerHTML = `
             English (en)
         </button>
         <ul class="dropdown-menu">
-        <li><span onclick="changeLang('en')" class="dropdown-item active en" >en</span></li>
-            <li><span onclick="changeLang('ar')" class="dropdown-item  ar" >ar</span></li>
+        <li><span onclick="changeLang('en')" class="dropdown-item active en d-flex align-items-center gap-2" ><img src="assets/en-flag.svg" width="14" alt="" /> en</span></li>
+            <li><span onclick="changeLang('ar')" class="dropdown-item  ar d-flex align-items-center gap-2" > <img src="assets/ar-flag.svg" width="14" alt="" /> ar</span></li>
         </ul>
 
         <a href="tel:+966920012778" class="main-btn">
