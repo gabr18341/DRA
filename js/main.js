@@ -86,15 +86,15 @@ document.querySelector('footer').innerHTML = `
                 <div class="col-6 px-4 col-lg-3 mt-4 mt-md-0">
                     <h6>DRA Company</h6>
                     <ul>
-                        <li><a href="#">Our Shop</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="shop.html">Our Shop</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                 </div>
                 <div class="col-6 px-4 col-lg-3 mt-4 mt-lg-0">
                     <h6>Help</h6>
                     <ul>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#"> Refunds and Returns</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="refund.html"> Refunds and Returns</a></li>
                     </ul>
                 </div>
                 <div class="col-12 px-2 col-md-6 col-lg-3 mt-4 mt-lg-0">
