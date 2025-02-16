@@ -74,13 +74,12 @@ document.querySelector('footer').innerHTML = `
                     <div class="logo-footer"><img src="assets/Dra-header-LOGO.svg" alt=""></div>
                     <p>Together, we reach the summit.</p>
                     <div class="social-container d-flex gap-1 mt-2">
-                        <a href="#" class="icon-box"><i class='bx bxl-facebook'></i></a>
-                        <a href="#" class="icon-box"><i class='bx bxl-twitter' ></i></a>
-                        <a href="#" class="icon-box"><i class='bx bxl-youtube' ></i></a>
-                        <a href="#" class="icon-box"><i class='bx bxl-instagram' ></i></a>
-                        <a href="#" class="icon-box"><i class='bx bxl-snapchat' ></i></a>
-                        <a href="#" class="icon-box"><i class='bx bxl-tiktok' ></i></a>
-                        <a href="#" class="icon-box"><i class='bx bx-strikethrough' ></i></a>
+                        <a href="https://www.facebook.com/digits.reality/" class="icon-box"><i class='bx bxl-facebook'></i></a>
+                        <a href="https://www.twitter.com/digitsreality/" class="icon-box"><i class='bx bxl-twitter' ></i></a>
+                        <a href="https://www.youtube.com/@digits.reality" class="icon-box"><i class='bx bxl-youtube' ></i></a>
+                        <a href="https://www.instagram.com/digits.reality/" class="icon-box"><i class='bx bxl-instagram' ></i></a>
+                        <a href="https://snapchat.com/t/ltnxIbE7" class="icon-box"><i class='bx bxl-snapchat' ></i></a>
+                        <a href="https://www.tiktok.com/@digits.reality?_t=8nvZt1WOwa7&_r=1" class="icon-box"><i class='bx bxl-tiktok' ></i></a>
                     </div>
                 </div>
                 <div class="col-6 px-4 col-lg-3 mt-4 mt-md-0">

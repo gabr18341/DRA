@@ -1278,6 +1278,7 @@ footer .social-container a {
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
 }
+
 footer .social-container a:hover {
     background-color: var(--light-color);
     color: var(--sec-color);
@@ -1306,6 +1307,14 @@ footer .main-btn {
     cursor: pointer;
     font-size: 11px;
     font-weight: 500;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+}
+footer .main-btn:hover {
+    background-color: var(--light-color);
 }
 footer input::placeholder {
     color: #00000040;
