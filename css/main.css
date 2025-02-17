@@ -198,14 +198,52 @@ a {
     border-width: 1px;
     border-radius: 2px;
     padding: 4px 25px;
+    padding-left: 0;
+    padding-right: 0;
     transition: all 0.3s;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     -ms-transition: all 0.3s;
     -o-transition: all 0.3s;
 }
+.nav-header .main-btn:last-child {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.nav-header .main-btn .gt_float_switcher img {
+    width: 22px !important;
+}
+.nav-header .main-btn #gt_float_wrapper {
+    height: 25px !important;
+}
+.nav-header .main-btn .gt_float_switcher {
+    background-color: transparent !important;
+    color: white !important;
+    box-shadow: none;
+}
+.nav-header .main-btn .gt_float_switcher .gt_options.gt-open {
+    background-color: #d2deff !important;
+    border-radius: 6px !important;
+    margin-top: 10px !important;
+    -webkit-border-radius: 6px !important;
+    -moz-border-radius: 6px !important;
+    -ms-border-radius: 6px !important;
+    -o-border-radius: 6px !important;
+}
+.nav-header .main-btn .gt_float_switcher .gt-selected .gt-current-lang {
+    padding: 0 !important;
+}
+.nav-header .main-btn .gt_float_switcher .gt-selected .gt-current-lang span.gt-lang-code{
+    color: white !important;
+    font-size: 14px !important;
+}
+.nav-header .main-btn .gt_float_switcher .gt-selected {
+    background-color: transparent !important;
+    color: white !important;
+    width: 124px !important;
+}
 
-.nav-header .main-btn:hover {
+.nav-header .main-btn:last-child:hover {
     background-color: var(--light-color);
     transform: scale(0.9);
     -webkit-transform: scale(0.9);
@@ -1095,7 +1133,7 @@ a {
     -webkit-animation: scroll2 50s linear infinite;
   }
   .Our-Partners .tutorial .scroller:hover ,
-  .rtl .Our-Partners .tutorial .scroller:hover {
+  .translated-rtl .Our-Partners .tutorial .scroller:hover {
     animation-play-state: paused;
   }
   .Our-Partners .tutorial .item img {
@@ -1161,11 +1199,11 @@ a {
 }
   }
 
-  .rtl .Our-Partners .tutorial .scroller {
+  .translated-rtl .Our-Partners .tutorial .scroller {
     animation: scroll-ar 50s linear infinite;
     -webkit-animation: scroll-ar 50s linear infinite;
 }
-  .rtl .Our-Partners .tutorial .scroller:nth-child(2) {
+  .translated-rtl .Our-Partners .tutorial .scroller:nth-child(2) {
     animation: scroll-ar-2 50s linear infinite;
     -webkit-animation: scroll-ar-2 50s linear infinite;
 }
@@ -1582,7 +1620,7 @@ footer .img-bottom-footer img {
     -o-transform: scaleX(0);
     transform-origin: center right;
 }
-.rtl .cart-section {
+.translated-rtl .cart-section {
     right: auto;
     left: 0;
 }

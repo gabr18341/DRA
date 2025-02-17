@@ -47,24 +47,20 @@ document.querySelector('header').innerHTML = `
             <i class='bx bx-x' ></i>
         </div>
     </nav>
-    <div>
+    <div class="d-flex gap-2">
         <div id="mobile-menu" class="mobile-nav">
             <i class='bx bx-menu'></i>
         </div>
-        <button class="main-btn btn-sm dropdown-toggle fs-6 " type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            English (en)
+        <button class="main-btn btn-sm fs-6 " type="button" >
+            <div class="gtranslate_wrapper"></div>
         </button>
-        <ul class="dropdown-menu">
-        <li><span onclick="changeLang('en')" class="dropdown-item active en d-flex align-items-center gap-2" ><img src="assets/en-flag.svg" width="14" alt="" /> en</span></li>
-            <li><span onclick="changeLang('ar')" class="dropdown-item  ar d-flex align-items-center gap-2" > <img src="assets/ar-flag.svg" width="14" alt="" /> ar</span></li>
-        </ul>
-
         <a href="tel:+966920012778" class="main-btn">
             <span>Call Now</span>
         </a>
         
     </div>
 </div>
+
 </div>
 `;
 document.querySelector('footer').innerHTML = `
@@ -114,27 +110,6 @@ document.querySelector('footer').innerHTML = `
             </div>
         </div>
 `
-// handel language change
-
-function changeLang(lang) {
-    localStorage.setItem('lang', lang);
-    document.documentElement.lang = lang;
-    currentLanguage = lang;
-
-    if (lang === 'en') {
-        document.body.classList.remove('rtl')
-        document.body.dir = 'ltr';
-        document.querySelector('header .dropdown-menu .dropdown-item.en').classList.add('active')
-        document.querySelector('header .dropdown-menu .dropdown-item.ar').classList.remove('active')
-    } else {
-        document.body.classList.add('rtl')
-        document.body.dir = 'rtl'
-        document.querySelector('header .dropdown-menu .dropdown-item.ar').classList.add('active')
-        document.querySelector('header .dropdown-menu .dropdown-item.en').classList.remove('active')
-    }
-}
-
-changeLang(currentLanguage);
 
 // handel show mobile menu
 document.getElementById('mobile-menu').onclick = () => {
@@ -296,3 +271,32 @@ filterBtns?.forEach((btn) => {
         filterData(dataFiltered)
     })
 })
+
+
+// استهداف عنصر <html>
+const htmlElement = document.documentElement;
+
+// تنفيذ المهمة عند تغيير اللغة
+const handleLanguageChange = (lang) => {
+
+  // ✅ يمكنك تنفيذ أي مهمة هنا
+  if (lang === "ar") {
+    document.body.style.direction = "rtl";
+    document.body.classList.add('rtl')
+  } else {
+    document.body.style.direction = "ltr"; 
+    document.body.classList.remove('rtl')
+  }
+};
+    
+// مراقبة تغيّر خاصية lang
+const observer = new MutationObserver((mutations) => {
+  mutations.forEach((mutation) => {
+    if (mutation.attributeName === "lang") {
+      handleLanguageChange(htmlElement.lang);
+    }
+  });
+});
+
+// بدء مراقبة تغيّر lang في <html>
+observer.observe(htmlElement, { attributes: true });
