@@ -70,12 +70,12 @@ document.querySelector('footer').innerHTML = `
                     <div class="logo-footer"><img src="assets/Dra-header-LOGO.svg" alt=""></div>
                     <p>Together, we reach the summit.</p>
                     <div class="social-container d-flex gap-1 mt-2">
-                        <a href="https://www.facebook.com/digits.reality/" class="icon-box"><i class='bx bxl-facebook'></i></a>
-                        <a href="https://www.twitter.com/digitsreality/" class="icon-box"><i class='bx bxl-twitter' ></i></a>
-                        <a href="https://www.youtube.com/@digits.reality" class="icon-box"><i class='bx bxl-youtube' ></i></a>
-                        <a href="https://www.instagram.com/digits.reality/" class="icon-box"><i class='bx bxl-instagram' ></i></a>
-                        <a href="https://snapchat.com/t/ltnxIbE7" class="icon-box"><i class='bx bxl-snapchat' ></i></a>
-                        <a href="https://www.tiktok.com/@digits.reality?_t=8nvZt1WOwa7&_r=1" class="icon-box"><i class='bx bxl-tiktok' ></i></a>
+                        <a target="_blank" href="https://www.facebook.com/digits.reality/" class="icon-box"><i class='bx bxl-facebook'></i></a>
+                        <a target="_blank" href="https://www.twitter.com/digitsreality/" class="icon-box"><i class='bx bxl-twitter' ></i></a>
+                        <a target="_blank" href="https://www.youtube.com/@digits.reality" class="icon-box"><i class='bx bxl-youtube' ></i></a>
+                        <a target="_blank" href="https://www.instagram.com/digits.reality/" class="icon-box"><i class='bx bxl-instagram' ></i></a>
+                        <a target="_blank" href="https://snapchat.com/t/ltnxIbE7" class="icon-box"><i class='bx bxl-snapchat' ></i></a>
+                        <a target="_blank" href="https://www.tiktok.com/@digits.reality?_t=8nvZt1WOwa7&_r=1" class="icon-box"><i class='bx bxl-tiktok' ></i></a>
                     </div>
                 </div>
                 <div class="col-6 px-4 col-lg-3 mt-4 mt-md-0">
@@ -105,7 +105,7 @@ document.querySelector('footer').innerHTML = `
         <div class="bottom-footer">
             <div class="container d-flex align-items-center py-2">
                 <div class="img-bottom-footer"><img src="assets/vision_2030.png" alt=""></div>
-                <p class="flex-grow-1 text-white d-flex justify-content-center align-items-center gap-1"><i class='bx bx-copyright' ></i>2024 DRA . All rights reserved.</p>
+                <p class="flex-grow-1 text-white d-flex justify-content-center align-items-center gap-1"><i class='bx bx-copyright' ></i>2024 <a href="https://dra.sa/" class=" text-info ">DRA</a> . All rights reserved.</p>
                 <div class=""></div>
             </div>
         </div>
