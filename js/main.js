@@ -1,6 +1,5 @@
 const currentPage = window.location.pathname
 const userDetails = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null;
-const userIcon = `<i class='bx bx-user-circle fs-4'></i>`;
 const baseUrl = 'http://192.168.8.102:8000/api';
 const TOKEN = localStorage.getItem('token') ? localStorage.getItem('token') : null;
 
@@ -64,7 +63,7 @@ if (document.querySelector('header')) {
                         <i class='bx bxs-grid'></i>
                     </div>
                     <a href="login.html" class="main-btn">
-                        <span class="d-flex align-items-center gap-1 ">${userDetails ? userIcon : '' }${userDetails ? userDetails.first_name : 'Sign In'}</span>
+                        <span class="d-flex align-items-center gap-1 "><i class='bx bx-user-circle fs-4'></i>  ${userDetails ? userDetails.first_name : 'Sign In'}</span>
                     </a>
                     <a href="tel:+966920012778" class="main-btn">
                         <span>Call Now</span>
