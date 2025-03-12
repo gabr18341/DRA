@@ -27,12 +27,37 @@ body {
 }
 
 /* global style ----------------------------------- */
+/* HTML: <div class="loader"></div> */
+.loader {
+    width: fit-content;
+    font-size: 40px;
+    font-family: monospace;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #acd14706;
+    -webkit-text-stroke: 1px #acd147;
+    background: linear-gradient(90deg,#acd14700 33%,#acd147 0 67%,#acd14700 0) 100%/300% 100% no-repeat text;
+    animation: l12 2.5s steps(14) infinite;
+    -webkit-animation: l12 2.5s steps(14) infinite;
+}
+  .loader:before {
+    content: "DRA.sa";
+  }
+  @keyframes l12 {
+    to {background-position: 0}
+  }
+
+  .table>:not(caption)>*> .loader {
+    color: #acd14706;
+  }
+
 ul {
     list-style: none;
 }
 a {
     text-decoration: none;
 }
+
 .main-btn {
     padding: 10px 20px;
     border: none;
@@ -194,57 +219,34 @@ a {
 
 .nav-header .main-btn {
     border-color: var(--light-color);
+    background-color: var(--light-color);
     border-style: solid;
     border-width: 1px;
     border-radius: 2px;
     padding: 4px 25px;
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 25px;
+    padding-right: 25px;
     transition: all 0.3s;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     -ms-transition: all 0.3s;
     -o-transition: all 0.3s;
 }
-.nav-header .main-btn:last-child {
-    padding-left: 25px;
-    padding-right: 25px;
-}
-.nav-header .main-btn .gt_float_switcher img {
-    width: 22px !important;
-}
-.nav-header .main-btn #gt_float_wrapper {
-    height: 25px !important;
-}
-.nav-header .main-btn .gt_float_switcher {
-    background-color: transparent !important;
-    color: white !important;
-    box-shadow: none;
-}
-.nav-header .main-btn .gt_float_switcher .gt_options.gt-open {
-    background-color: #d2deff !important;
-    border-radius: 6px !important;
-    margin-top: 10px !important;
-    -webkit-border-radius: 6px !important;
-    -moz-border-radius: 6px !important;
-    -ms-border-radius: 6px !important;
-    -o-border-radius: 6px !important;
-}
-.nav-header .main-btn .gt_float_switcher .gt-selected .gt-current-lang {
-    padding: 0 !important;
-}
-.nav-header .main-btn .gt_float_switcher .gt-selected .gt-current-lang span.gt-lang-code{
-    color: white !important;
-    font-size: 14px !important;
-}
-.nav-header .main-btn .gt_float_switcher .gt-selected {
-    background-color: transparent !important;
-    color: white !important;
-    width: 124px !important;
-}
 
+.nav-header .main-btn:last-child {
+    background-color: transparent;
+}
 .nav-header .main-btn:last-child:hover {
     background-color: var(--light-color);
+    transform: scale(0.9);
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    -o-transform: scale(0.9);
+}
+
+.nav-header .main-btn:first-child:hover {
+    background-color: transparent;
     transform: scale(0.9);
     -webkit-transform: scale(0.9);
     -moz-transform: scale(0.9);
@@ -256,12 +258,12 @@ a {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: var(--bg-section);
-    color: var(--sec-color);
+    color: var(--bg-section);
+    background-color: var(--sec-color);
     justify-content: center;
     align-items: center;
     position: fixed;
-    top: 80px;
+    top: 7px;
     left: -100%;
     opacity: 0;
     visibility: hidden;
@@ -278,6 +280,29 @@ a {
     -moz-transition: all 0.5s ease;
     -ms-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
+}
+
+.social-icons-menu {
+    display: none;
+}
+.logo-menu-in-mobile {
+    display: none;
+}
+
+.nav-header nav .social-icons-menu a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--sec-color);
+    color: var(--light-color);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
 }
 
 
@@ -783,7 +808,7 @@ a {
   }
   
   .price-section .price-card-container .price {
-    font-size: 4rem;
+    font-size: 2rem;
     font-weight: bold;
     text-shadow: 0 0 1px var(--light-color);
     color: var(--sec-color);
@@ -1430,9 +1455,14 @@ footer .img-bottom-footer img {
 
   @media screen and (max-width: 779px) {
     header .container.p-2 {
-        position: relative;
-        z-index: 1000;
+        /* position: relative;
+        z-index: 1000; */
         background-color: white;
+    }
+    
+    .nav-header .container .social-icons-menu {
+        display: flex;
+
     }
     .hero-section .hero-img {
         text-align: right;
@@ -1454,7 +1484,7 @@ footer .img-bottom-footer img {
         position: fixed;
         width: 90vw;
         height: 100vh;
-        background-color: #143745;
+        background-color: var(--bg-section);
         top: 0;
         left: -100%;
         display: flex;
@@ -1469,10 +1499,21 @@ footer .img-bottom-footer img {
         -ms-transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         -o-transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
+.logo-menu-in-mobile {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.logo-menu-in-mobile img {
+    width: 70%;
+}
     .nav-header nav a {
         display: block;
         width: 100%;
         text-align: center;
+        color: var(--sec-color);
+        font-weight: 600;
+        font-size: 18x;
     }
     .nav-header nav a::before {
         bottom: -5px;
@@ -1486,7 +1527,7 @@ footer .img-bottom-footer img {
     }
     .nav-header.show-mobile-menu .mobile-icons {
         z-index: 502;
-        left: 20px;
+        left: 70%;
         opacity: 1;
         visibility: visible;
     }
@@ -1654,7 +1695,7 @@ footer .img-bottom-footer img {
 }
 
 .cart-section .product-container {
-    overflow-y: hidden;
+    overflow-y: auto;
     height: calc(100vh - 230px);
 }
 .cart-section .product-card {
@@ -1716,7 +1757,7 @@ footer .img-bottom-footer img {
     position: fixed;
     bottom: 70px;
     right: 20px;
-    z-index: 500;
+    z-index: 400;
     display: flex;
     justify-content: center;
     align-items: center;

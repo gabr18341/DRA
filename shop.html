@@ -56,7 +56,7 @@
     <link rel="stylesheet" href="css/main.css">
     <!-- icon - Boxicons CSS -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.17.2/dist/sweetalert2.min.css">
 
 </head>
 
@@ -69,33 +69,11 @@
         <!-- start - shop section  -->
         <section class="shop-section">
             <div class="container">
-                <ul class="d-flex justify-content-center gap-2 align-items-center nav-shop-filter">
-                    <li><button data-filter="all">Non classe</button></li>
-                    <li><button data-filter="advertising">Advertising</button></li>
-                    <li><button data-filter="services">Branding and Creative Services</button></li>
-                    <li><button data-filter="development">Development</button></li>
-                    <li><button data-filter="pack">Our Pack</button></li>
-                    <li><button data-filter="marketing">Social Media Marketing</button></li>
+                <ul id="categories" class="d-flex justify-content-center gap-2 align-items-center nav-shop-filter">
+                    <li><button onclick="getProducts('all')" data-filter="all">All</button></li>
                 </ul>
-                <div class="shop-container mt-4">
-                    <div class="product-item p-2 d-flex align-items-center gap-2">
-                        <div class="img-container">
-                            <img src="https://i0.wp.com/dra.sa/wp-content/uploads/2024/07/Package-1.png?fit=1080%2C1080&ssl=1"
-                                alt="">
-                            <div class="add-cart"><span onclick="showCart()">+</span></div>
-                        </div>
-                        <div class="product-content p-1">
-                            <a href="product.html"><h6>Growth Package</h6></a>
-                            <div class="stars-box d-flex align-items-center g-1 mb-2">
-                                <i class='bx bx-star'></i>
-                                <i class='bx bx-star'></i>
-                                <i class='bx bx-star'></i>
-                                <i class='bx bx-star'></i>
-                                <i class='bx bx-star'></i>
-                            </div>
-                            <span class="price">575.00 رس</span>
-                        </div>
-                    </div>
+                <div id="products" class="shop-container mt-4">
+                    <div class='d-flex justify-content-center align-items-center py-2 w-100'><div class='loader'></div></div>
                 </div>
             </div>
         </section>
@@ -118,35 +96,14 @@
                 <span onclick="showCart()" class="close"><i class='bx bx-x-circle' ></i></span>
             </div>
             <div class="cart-body">
-                <div class="product-container">
-                    <div class="product-card d-flex gap-2">
-                        <div class="img"><img src="https://i0.wp.com/dra.sa/wp-content/uploads/2024/07/Growth-Package.png?resize=300%2C300&ssl=1" alt=""></div>
-                        <div class="content d-flex align-items-center justify-content-between flex-grow-1">
-                            <div>
-                                <h6>Growth Package</h6>
-                                <p class="d-flex align-items-center gap-2"> <span class="qu">X2</span>: <span class="price">120 رس .</span> </p>
-                                <p class="total-price">240 رس.</p>
-                            </div>
-                            <div class="delate"><i class='bx bx-trash' ></i></div>
-                        </div>
-                    </div>
-                    <div class="product-card d-flex gap-2">
-                        <div class="img"><img src="https://i0.wp.com/dra.sa/wp-content/uploads/2024/07/Growth-Package.png?resize=300%2C300&ssl=1" alt=""></div>
-                        <div class="content d-flex align-items-center justify-content-between flex-grow-1">
-                            <div>
-                                <h6>Growth Package</h6>
-                                <p class="d-flex align-items-center gap-2"> <span class="qu">X2</span>: <span class="price">120 رس .</span> </p>
-                                <p class="total-price">240 رس.</p>
-                            </div>
-                            <div class="delate"><i class='bx bx-trash' ></i></div>
-                        </div>
-                    </div>
+                <div id="pro-in-cart" class="product-container">
+                    
                 </div>
             </div>
             <div class="cart-footer">
                 <h6>
                     <span>Subtotal:</span>
-                    <span class="Subtotal">480 رس.</span>
+                    <span id="subtotal" class="Subtotal"></span>
                 </h6>
                 <p>Shipping, taxes, and discounts calculated at checkout.</p>
                 <div class="d-flex gap-1 mb-1">
@@ -154,7 +111,7 @@
                     <button class="main-btn flex-grow-1" onclick="showCart()">Continue Shopping</button>
                 </div>
                 <a href="checkout.html" class="main-btn ">Checkout : 
-                    1,955.00 ﷼</a>
+                    <span id="checkout-total"></span> ر.س</a>
             </div>
         </div>
         
@@ -177,12 +134,8 @@
     <script src="lib/aos/aos.js"></script>
     <!-- filter animation -->
     <script src="lib/isotope-layout/isotope.pkgd.min.js"></script>
-    <!-- translate  -->
-    <script>window.gtranslateSettings = {"default_language":"en","languages":["en","fr","ar"],"wrapper_selector":".gtranslate_wrapper","switcher_horizontal_position":"inline","float_switcher_open_direction":"bottom","alt_flags":{"en":"usa"}}</script>
-    <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.17.2/dist/sweetalert2.all.min.js"></script>
     <!-- main js file ------------ -->
      <script src="js/main.js"></script>
-<script>window.gtranslateSettings = {"default_language":"en","languages":["en","fr","ar"],"wrapper_selector":".gtranslate_wrapper","switcher_horizontal_position":"inline","float_switcher_open_direction":"bottom","alt_flags":{"en":"usa"}}</script>
-<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
-
+     <script src="js/home.js"></script>
 </html>

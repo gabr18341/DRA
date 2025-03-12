@@ -57,7 +57,7 @@
     <link rel="stylesheet" href="css/main.css">
     <!-- icon - Boxicons CSS -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.17.2/dist/sweetalert2.min.css">
 
 </head>
 
@@ -83,8 +83,8 @@
                         <th scope="col">Subtotal</th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr>
+                    <tbody id="cart-products" >
+                      <!-- <tr>
                         <th scope="row"><i class='bx bx-x' ></i></th>
                         <td><img width="40" height="40" src="https://i0.wp.com/dra.sa/wp-content/uploads/2024/07/Package-1.png?resize=300%2C300&ssl=1" alt=""></td>
                         <td>Starting package</td>
@@ -99,23 +99,25 @@
                         <td>
                            <p> 4,830.00 ﷼ (incl. VAT)</p>
                         </td>
-                      </tr>
+                      </tr> -->
                     </tbody>
                   </table>
             </div>
-            <div class="my-2 d-flex justify-content-end">
-                <button class="main-btn">Update Cart</button>
-            </div>
+            
             <div class="card p-3 my-3">
                 <h5>Cart Totals</h5>
                 <div class="card-body">
                     <p class="p-3 border-bottom d-flex justify-content-between align-items-center">
                         <span>Subtotal</span>
-                        <span>4,830.00 ﷼</span>
+                        <span id="subtotal"></span>
+                    </p>
+                    <p class="p-3 border-bottom d-flex justify-content-between align-items-center">
+                        <span>VAT (15%)</span>
+                        <span id="vat"></span>
                     </p>
                     <p class="p-3 border-bottom d-flex justify-content-between align-items-center">
                         <span>Total</span>
-                        <span>4,830.00 ﷼</span>
+                        <span id="total"></span>
                     </p>
                 </div>
                 <div class="card-footer d-flex">
@@ -134,35 +136,14 @@
                 <span onclick="showCart()" class="close"><i class='bx bx-x-circle' ></i></span>
             </div>
             <div class="cart-body">
-                <div class="product-container">
-                    <div class="product-card d-flex gap-2">
-                        <div class="img"><img src="https://i0.wp.com/dra.sa/wp-content/uploads/2024/07/Growth-Package.png?resize=300%2C300&ssl=1" alt=""></div>
-                        <div class="content d-flex align-items-center justify-content-between flex-grow-1">
-                            <div>
-                                <h6>Growth Package</h6>
-                                <p class="d-flex align-items-center gap-2"> <span class="qu">X2</span>: <span class="price">120 رس .</span> </p>
-                                <p class="total-price">240 رس.</p>
-                            </div>
-                            <div class="delate"><i class='bx bx-trash' ></i></div>
-                        </div>
-                    </div>
-                    <div class="product-card d-flex gap-2">
-                        <div class="img"><img src="https://i0.wp.com/dra.sa/wp-content/uploads/2024/07/Growth-Package.png?resize=300%2C300&ssl=1" alt=""></div>
-                        <div class="content d-flex align-items-center justify-content-between flex-grow-1">
-                            <div>
-                                <h6>Growth Package</h6>
-                                <p class="d-flex align-items-center gap-2"> <span class="qu">X2</span>: <span class="price">120 رس .</span> </p>
-                                <p class="total-price">240 رس.</p>
-                            </div>
-                            <div class="delate"><i class='bx bx-trash' ></i></div>
-                        </div>
-                    </div>
+                <div id="pro-in-cart" class="product-container">
+                    
                 </div>
             </div>
             <div class="cart-footer">
                 <h6>
                     <span>Subtotal:</span>
-                    <span class="Subtotal">480 رس.</span>
+                    <span id="subtotal-in-cart" class="Subtotal"></span>
                 </h6>
                 <p>Shipping, taxes, and discounts calculated at checkout.</p>
                 <div class="d-flex gap-1 mb-1">
@@ -170,7 +151,7 @@
                     <button class="main-btn flex-grow-1" onclick="showCart()">Continue Shopping</button>
                 </div>
                 <a href="checkout.html" class="main-btn ">Checkout : 
-                    1,955.00 ﷼</a>
+                    <span id="checkout-total"></span> ر.س</a>
             </div>
         </div>
         
@@ -184,10 +165,10 @@
     <!-- liberaries -->
     <!-- bootstarap -->
     <script src="lib/bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
-    <!-- translate  -->
-    <script>window.gtranslateSettings = {"default_language":"en","languages":["en","fr","ar"],"wrapper_selector":".gtranslate_wrapper","switcher_horizontal_position":"inline","float_switcher_open_direction":"bottom","alt_flags":{"en":"usa"}}</script>
-<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+    
     <!-- main js file ------------ -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.17.2/dist/sweetalert2.all.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
 
 </html>
