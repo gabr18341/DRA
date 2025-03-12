@@ -94,9 +94,10 @@ if (document.querySelector('footer')) {
                         </div>
                     </div>
                     <div class="col-6 px-4 col-lg-3 mt-4 mt-md-0">
-                        <h6>DRA Company</h6>
+                        <h6>Quick Links</h6>
                         <ul>
                             <li><a href="shop.html">Our Shop</a></li>
+                            <li><a href="index.html#our-packs">Our Packs</a></li>
                             <li><a href="contact.html">Contact Us</a></li>
                         </ul>
                     </div>
@@ -105,6 +106,7 @@ if (document.querySelector('footer')) {
                         <ul>
                             <li><a href="privacy.html">Privacy Policy</a></li>
                             <li><a href="refund.html"> Refunds and Returns</a></li>
+                            <li><a href="refund.html"> My Account</a></li>
                         </ul>
                     </div>
                     <div class="col-12 px-2 col-md-6 col-lg-3 mt-4 mt-lg-0">
