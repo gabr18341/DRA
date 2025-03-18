@@ -1,6 +1,6 @@
 const userAuth = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null;
 const token = localStorage.getItem('token') ? localStorage.getItem('token') : null;
-const base_URL = 'http://192.168.8.102:8000/api';
+const base_URL = 'http://192.168.8.126:8000/api';
 const errElement = document.getElementById("err");
 const categoriesElement = document.getElementById("categories");
 const productsElement = document.getElementById("products");
@@ -85,7 +85,9 @@ function getProducts(cat) {
 }
 getProducts("all");
 
-function getPackages() {
+function getPackages(price, index) {
+    document.querySelectorAll('.price-section .nav-pack button').forEach(btn => btn.classList.remove('active'));
+    document.querySelectorAll('.price-section .nav-pack button')[index].classList.add('active');
     packagesElement.innerHTML = "<div class='d-flex justify-content-center align-items-center py-2 w-100'><div class='loader'></div></div>";
     try {
         fetch(`${base_URL}/packages/packages/`, {
@@ -106,7 +108,7 @@ function getPackages() {
                     <div data-aos-duration="10${index}0" data-aos="zoom-in" class="card ${index === 3 ? 'main-pack' : ''}">
                         <h6 class="card__title">${package.name}</h6>
                         <div class="card__body">
-                            <p class="price"><span class="price__symbol">SAR</span>${package.monthly_price}</p>
+                            <p class="price"><span class="price__symbol">SAR</span>${package[price]}</p>
                             <p class="price__tag">/Month</p>
                         </div>
                         <ol class="card__list">
@@ -126,7 +128,7 @@ function getPackages() {
         
     }
 }
-getPackages();
+getPackages('monthly_price',0);
 
 function getPartners() {
     partnersElement.innerHTML = "<div class='d-flex justify-content-center align-items-center py-2 w-100'><div class='loader'></div></div>";

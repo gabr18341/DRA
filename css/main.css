@@ -766,8 +766,36 @@ a {
 }
 /* end shop section style -------------------------------------------------- */
 /* start price section style -------------------------------------------------- */
-.price-section {
-
+.price-section .nav-pack {
+    width: fit-content;
+    background-color: var(--bg-section);
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    margin: 0 auto;
+}
+.price-section .filter-btn {
+    padding: 5px 20px;
+    border-radius: 46px;
+    background-color: transparent;
+    color: var(--sec-color);
+    transition: all 0.3s ease-in-out;
+    border: 0;
+    outline: 0;
+    -webkit-border-radius: 46px;
+    -moz-border-radius: 46px;
+    -ms-border-radius: 46px;
+    -o-border-radius: 46px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+}
+.price-section .filter-btn.active {
+    background-color: var(--main-color);
+    color: white;
 }
 
   

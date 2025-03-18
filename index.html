@@ -191,6 +191,14 @@
         <section id="our-packs" class="price-section">
             <div class="container">
                 <h5 class="section-title">Our <span class="span"><span>PACK</span></span></h5>
+                <div class="my-4">
+                    <div class="nav-pack d-flex justify-content-center p-2">
+                        <button onclick="getPackages('monthly_price',0)" class="filter-btn active">Monthly</button>
+                        <button onclick="getPackages('three_month_price',1)" class="filter-btn">3 Months</button>
+                        <button onclick="getPackages('six_month_price',2)" class="filter-btn">6 Months</button>
+                        <button onclick="getPackages('twelve_month_price',3)" class="filter-btn">Yearly</button>
+                    </div>
+                </div>
                 <div id="packages" class="price-card-container">
                     <div data-aos-duration="1000" data-aos="zoom-in" class="card">
                         <h6 class="card__title">Starting package</h6>
