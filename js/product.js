@@ -1,6 +1,5 @@
 const urlParams = new URLSearchParams(window.location.search);
 const productId = urlParams.get('id').slice(4);
-const base_Url = 'http://192.168.8.102:8000/api';
 const Token = localStorage.getItem('token') ? localStorage.getItem('token') : null;
 let targetProduct ;
 if (!productId) {
@@ -8,7 +7,7 @@ if (!productId) {
 }
 function getProducts() {
     try {
-        fetch(`${base_Url}/store/products/`, {
+        fetch(`${baseUrl}/store/products/`, {
             method: 'GET',
         })
         .then(response => response.json())
@@ -31,7 +30,7 @@ function getProducts() {
 getProducts();
 function getCategories(slug) {
     try {
-        fetch(`${base_Url}/store/categories/`, {
+        fetch(`${baseUrl}/store/categories/`, {
             method: 'GET',
         })
         .then(response => response.json())
@@ -51,7 +50,7 @@ function getCategories(slug) {
 const productsElement = document.getElementById("related-products");
 function getRelatedProducts(cat) {
     productsElement.innerHTML = "<div class='d-flex justify-content-center align-items-center py-2 w-100'><div class='loader'></div></div>";
-    let api = `${base_Url}/store/categories/${cat}/products/`;
+    let api = `${baseUrl}/store/categories/${cat}/products/`;
     try {
         fetch(`${api}`, {
             method: 'GET',
@@ -72,8 +71,8 @@ function getRelatedProducts(cat) {
                         <div class="product-content">
                             <a href="product.html?id=${random}${product.id}"><h6 class="text-black-50">${product.name}</h6></a>
                             <div class="product-price d-flex gap-1 align-items-center">
-                                <span>﷼</span>
-                                <span class="price">${product.price}﷼</span>
+                                <span> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1124.14 1256.39" style="height: 19px; fill: white;"><path d="M699.62,1113.02h0c-20.06,44.48-33.32,92.75-38.4,143.37l424.51-90.24c20.06-44.47,33.31-92.75,38.4-143.37l-424.51,90.24Z"></path><path d="M1085.73,895.8c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.33v-135.2l292.27-62.11c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.27V66.13c-50.67,28.45-95.67,66.32-132.25,110.99v403.35l-132.25,28.11V0c-50.67,28.44-95.67,66.32-132.25,110.99v525.69l-295.91,62.88c-20.06,44.47-33.33,92.75-38.42,143.37l334.33-71.05v170.26l-358.3,76.14c-20.06,44.47-33.32,92.75-38.4,143.37l375.04-79.7c30.53-6.35,56.77-24.4,73.83-49.24l68.78-101.97v-.02c7.14-10.55,11.3-23.27,11.3-36.97v-149.98l132.25-28.11v270.4l424.53-90.28Z"></path></svg></span>
+                                <span class="price">${product.price} <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1124.14 1256.39" style="height: 19px; fill: white;"><path d="M699.62,1113.02h0c-20.06,44.48-33.32,92.75-38.4,143.37l424.51-90.24c20.06-44.47,33.31-92.75,38.4-143.37l-424.51,90.24Z"></path><path d="M1085.73,895.8c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.33v-135.2l292.27-62.11c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.27V66.13c-50.67,28.45-95.67,66.32-132.25,110.99v403.35l-132.25,28.11V0c-50.67,28.44-95.67,66.32-132.25,110.99v525.69l-295.91,62.88c-20.06,44.47-33.33,92.75-38.42,143.37l334.33-71.05v170.26l-358.3,76.14c-20.06,44.47-33.32,92.75-38.4,143.37l375.04-79.7c30.53-6.35,56.77-24.4,73.83-49.24l68.78-101.97v-.02c7.14-10.55,11.3-23.27,11.3-36.97v-149.98l132.25-28.11v270.4l424.53-90.28Z"></path></svg></span>
                             </div>   
                             <button class="main-btn mt-2"  data-proID="${product.id}" onclick="addToCartR(this)">Add To Cart</button>
                         </div>
@@ -99,7 +98,7 @@ function addToCartR(btn) {
         btn.innerHTML = "Loading...";
         btn.disabled = true;
         try {
-            fetch(`${base_Url}/store/carts/add_item/`, {
+            fetch(`${baseUrl}/store/carts/add_item/`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -141,7 +140,7 @@ function addToCart(btn) {
         btn.innerHTML = "Loading...";
         btn.disabled = true;
         try {
-            fetch(`${base_Url}/store/carts/add_item/`, {
+            fetch(`${baseUrl}/store/carts/add_item/`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -186,7 +185,7 @@ function deleteFromCart(btn) {
         btn.innerHTML = "...";
         btn.disabled = true;
         try {
-            fetch(`${base_Url}/store/carts/remove_item/`, {
+            fetch(`${baseUrl}/store/carts/remove_item/`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

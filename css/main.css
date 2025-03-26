@@ -1607,6 +1607,10 @@ footer .img-bottom-footer img {
     .newslitter a {
         margin-bottom: 2rem !important;
     } 
+    .price-section .filter-btn {
+        font-size: 10px;
+        padding: 5px 15px;
+    }
   }
 
   .go-top {

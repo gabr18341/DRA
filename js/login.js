@@ -1,6 +1,10 @@
 const signUpButton = document.getElementById("signUp");
 const signInButton = document.getElementById("signIn");
 const container = document.getElementById("container");
+const urlParams = new URLSearchParams(window.location.search);
+const returnPage = urlParams.get('return');
+const productInCart = localStorage.getItem('products')
+
 
 signUpButton.addEventListener("click", () => {
   container.classList.add("right-panel-active");
@@ -10,7 +14,6 @@ signInButton.addEventListener("click", () => {
   container.classList.remove("right-panel-active");
 });
 
-const baseURL = 'http://192.168.8.102:8000/api';
 const errElement = document.getElementById("err");
 const errElement2 = document.getElementById("err2");
 // handel signup ****************************************
@@ -34,7 +37,7 @@ function handelSignUp(btn) {
         document.getElementById("user-name-up").style.border = "";
 
         try {
-            fetch(`${baseURL}/accounts/register/`, {
+            fetch(`${baseUrl}/accounts/register/`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -49,7 +52,7 @@ function handelSignUp(btn) {
             })
             .then(response => response.json())
             .then(data => {
-                if (data.first_name) {
+                if (data.email) {
                     window.localStorage.setItem('user', JSON.stringify(data));
                     Swal.fire({
                         icon: "success",
@@ -59,15 +62,20 @@ function handelSignUp(btn) {
                     });
                     errElement.innerHTML = "Account created successfully";
                     errElement.style.color = "green";
-                    setTimeout(() => {
-                        window.location.href = "/";
-                    }, 1700);
+                    if (productInCart) {
+                        signInAfterSignUp(email , password)
+                    } else {
+                        setTimeout(() => {
+                            window.location.href = returnPage ? `${returnPage}.html` : "/profile/user-view-account.html";
+                        }, 1700);
+                    }
                 }
                 else {
                     errElement.innerHTML = `${data.email ? data.email[0] : ""} ${data.password ? data.password[0] : ""}`;
+                    btn.innerHTML = "Sign Up";
+                    btn.disabled = false;
                 }
-                btn.innerHTML = "Sign Up";
-                btn.disabled = false;
+                
                 
             })
             .catch((error) => {
@@ -112,7 +120,7 @@ function handelSignIn(btn) {
         document.getElementById("password-up").style.border = "";
 
         try {
-            fetch(`${baseURL}/accounts/token/`, {
+            fetch(`${baseUrl}/accounts/token/`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -127,7 +135,7 @@ function handelSignIn(btn) {
                 if (data.access) {
                     localStorage.setItem('token', data.access);
                     localStorage.setItem('refresh', data.refresh);
-                    window.location.href = "/";
+                    window.location.href = "/profile/user-view-account.html";
                 } else {
                     errElement2.innerHTML = "Invalid email or password";
                     btn.innerHTML = "Sign In";
@@ -152,6 +160,75 @@ function handelSignIn(btn) {
         if (!passwordValid) {
             document.getElementById("password-up").style.border = "1px solid red";
         }
+    }
+}
+
+
+async function addProductsToCart() {
+    let products = localStorage.getItem('products');
+    let dataForm = []
+    await JSON.parse(products).map(product => {
+        dataForm.push({
+            id: product.id,
+            quantity: product.quantity,
+        })
+    })
+    
+    try {
+        await fetch(`${baseUrl}/store/carts/add_items/`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${localStorage.getItem('token')}`
+            },
+            body: JSON.stringify(dataForm),
+        })
+        .then(response => response.json())
+        .then(data => {
+            
+            localStorage.removeItem('products')
+            window.location.href = returnPage ? `${returnPage}.html` : "/profile/user-view-account.html";
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+            
+        });
+    } catch (error) {
+        console.log(error);
+        
+    }
+
+}
+
+function signInAfterSignUp(email , password) {
+    try {
+         fetch(`${baseUrl}/accounts/token/`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                email: email,
+                password: password,
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            
+            if (data.access) {
+                localStorage.setItem('token', data.access);
+                localStorage.setItem('refresh', data.refresh);
+                addProductsToCart()
+            }
+            
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+    } catch (error) {
+        console.log(error);
+        
     }
 }
 

@@ -1,13 +1,12 @@
 const userAuth = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null;
 const token = localStorage.getItem('token') ? localStorage.getItem('token') : null;
-const base_URL = 'http://192.168.8.126:8000/api';
+const base_URL = 'http://192.168.8.209:8000/api';
 const errElement = document.getElementById("err");
 const categoriesElement = document.getElementById("categories");
 const productsElement = document.getElementById("products");
 const packagesElement = document.getElementById("packages");
 const partnersElement = document.getElementById("partners");
 const proInCartElement = document.getElementById("pro-in-cart");
-const statisticsElement = document.getElementById("statistics");
 const subtotalBtn = document.getElementById("subtotal");
 const checkoutBtn = document.getElementById("checkout-total");
 
@@ -50,8 +49,6 @@ function getProducts(cat) {
             productsElement.innerHTML = "";
             const products = data;
             products.forEach(product => {
-                let random = Math.floor(1000 + Math.random() * 9000);
-                
                 productsElement.innerHTML += `
                     <div class="product-item p-2 d-flex align-items-center gap-2" >
                         <div class="img-container">
@@ -60,7 +57,7 @@ function getProducts(cat) {
                             <div class="add-cart"><span data-proID="${product.id}" onclick="addToCart(this)">+</span></div>
                         </div>
                         <div class="product-content p-1">
-                            <a href="product.html?id=${random}${product.id}"><h6>${product.name}</h6></a>
+                            <a href="product.html"><h6>${product.name}</h6></a>
                             <div class="stars-box d-flex align-items-center g-1 mb-2">
                                 <i class='bx bx-star'></i>
                                 <i class='bx bx-star'></i>
@@ -85,9 +82,7 @@ function getProducts(cat) {
 }
 getProducts("all");
 
-function getPackages(price, index) {
-    document.querySelectorAll('.price-section .nav-pack button').forEach(btn => btn.classList.remove('active'));
-    document.querySelectorAll('.price-section .nav-pack button')[index].classList.add('active');
+function getPackages() {
     packagesElement.innerHTML = "<div class='d-flex justify-content-center align-items-center py-2 w-100'><div class='loader'></div></div>";
     try {
         fetch(`${base_URL}/packages/packages/`, {
@@ -97,6 +92,7 @@ function getPackages(price, index) {
         .then(data => {
             
             const packages = data;
+            console.log(packages);
             
             packagesElement.innerHTML = "";
             if (packages.length === 0) {
@@ -108,7 +104,7 @@ function getPackages(price, index) {
                     <div data-aos-duration="10${index}0" data-aos="zoom-in" class="card ${index === 3 ? 'main-pack' : ''}">
                         <h6 class="card__title">${package.name}</h6>
                         <div class="card__body">
-                            <p class="price"><span class="price__symbol">SAR</span>${package[price]}</p>
+                            <p class="price"><span class="price__symbol">SAR</span>${package.monthly_price}</p>
                             <p class="price__tag">/Month</p>
                         </div>
                         <ol class="card__list">
@@ -128,8 +124,7 @@ function getPackages(price, index) {
         
     }
 }
-getPackages('monthly_price',0);
-
+getPackages();
 function getPartners() {
     partnersElement.innerHTML = "<div class='d-flex justify-content-center align-items-center py-2 w-100'><div class='loader'></div></div>";
     try {
@@ -140,6 +135,7 @@ function getPartners() {
         .then(data => {
             
             const partners = data;
+            console.log(partners);
             
             partnersElement.innerHTML = "";
             if (partners.length === 0) {
@@ -163,44 +159,6 @@ function getPartners() {
     }
 }
 getPartners();
-function getStatistics() {
-    statisticsElement.innerHTML = "<div class='d-flex justify-content-center align-items-center py-2 w-100'><div class='loader'></div></div>";
-    try {
-        fetch(`${base_URL}/info/statistics/`, {
-            method: 'GET',
-        })
-        .then(response => response.json())
-        .then(data => {
-            
-            const statistics = data;            
-            
-            statisticsElement.innerHTML = "";
-            if (statistics.length === 0) {
-                return statisticsElement.innerHTML = "<div class='d-flex justify-content-center align-items-center py-2 w-100'><h4>No statistics available</h4></div>";
-            }
-            statistics.forEach((statistic) => {
-                statisticsElement.innerHTML += `
-                <div class="num-box">
-                    <div class="box-img"><img src="assets/like.gif" alt=""></div>
-                    <div class="box-content">
-                        <h6>${statistic.value}+</h6>
-                        <p>${statistic.title}</p>
-                    </div>
-                </div>
-                `;
-            });
-            
-
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-        });
-    } catch (error) {
-        console.log(error);
-        
-    }
-}
-getStatistics();
 
 function getProInCart() {
     proInCartElement.innerHTML = "<div class='d-flex justify-content-center align-items-center py-2 w-100'><div class='loader'></div></div>";
@@ -216,15 +174,12 @@ function getProInCart() {
             const products = data;
             
             proInCartElement.innerHTML = "";
-            if (products?.items?.length === 0) {
+            if (products.items.length === 0) {
                 return proInCartElement.innerHTML = "<div class='d-flex justify-content-center align-items-center py-2 w-100'><h4>No product available</h4></div>";
             }
-            let subtotal = Number(products.total_price);
-            let vat = subtotal * 0.15;
-            let total = subtotal + vat;
-            subtotalBtn.innerHTML = `${subtotal.toFixed(2)}﷼`;
-            checkoutBtn.innerHTML = `${total.toFixed(2)}`;
-            products?.items?.forEach((item) => {
+            subtotalBtn.innerHTML = `${products.total_price}﷼`;
+            checkoutBtn.innerHTML = `${products.total_price}`;
+            products.items.forEach((item) => {
                 proInCartElement.innerHTML += `
                     <div class="product-card d-flex gap-2">
                         <div class="img"><img src="${item.product.image ? item.product.image : "https://i0.wp.com/dra.sa/wp-content/uploads/2024/07/Growth-Package.png?resize=300%2C300&ssl=1"}" alt=""></div>
@@ -249,6 +204,7 @@ function getProInCart() {
         
     }
 }
+getProInCart();
 function addToCart(btn) {
     let productId = btn.getAttribute('data-proID');
     let quantity = 1;
@@ -271,6 +227,7 @@ function addToCart(btn) {
             })
             .then(response => response.json())
             .then(data => {
+                console.log(data);
                 if (data.id) {
                     btn.innerHTML = "Added";
                     // btn.disabled = true;

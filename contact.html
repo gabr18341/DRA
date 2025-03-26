@@ -122,21 +122,21 @@
                             <div class="row gy-4">
 
                                 <div>
-                                    <input type="text" name="name" class="form-control" placeholder="Your Name"
+                                    <input type="text" id="name" name="name" class="form-control" placeholder="Your Name"
                                         required="">
                                 </div>
                                 <div>
-                                    <input type="text" name="name" class="form-control" placeholder="Phone Number"
+                                    <input type="tel" id="phone"  name="Phone" class="form-control" placeholder="Phone Number"
                                         required="">
                                 </div>
 
                                 <div>
-                                    <input type="email" class="form-control" name="email" placeholder="Your Email"
+                                    <input type="email" id="email" class="form-control" name="email" placeholder="Your Email"
                                         required="">
                                 </div>
 
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" name="subject"
+                                    <input type="text" class="form-control" id="industry" name="subject"
                                         placeholder="What is your industry ?" required="">
                                 </div>
 
@@ -144,25 +144,25 @@
                                 <div class="col-md-12">
                                     <p>What services are you interested in ?</p>
                                 </div>
-                                <ul class="d-flex flex-column gap-2 m-0 mb-2">
-                                    <li  class="form-check form-switch"><input class="form-check-input" type="checkbox" role="switch" required=""
+                                <ul id="interests" class="d-flex flex-column gap-2 m-0 mb-2">
+                                    <li  class="form-check form-switch"><input oninput="handelChangeService()" class="form-check-input" type="checkbox" role="switch" required=""
                                             id="Marketing"><label for="Marketing">Digital Marketing</label></li>
-                                    <li class="form-check form-switch"><input  class="form-check-input" type="checkbox" role="switch" required="" id="Development"><label
+                                    <li class="form-check form-switch"><input oninput="handelChangeService()"  class="form-check-input" type="checkbox" role="switch" required="" id="Development"><label
                                             for="Development">Website Building & Development</label></li>
-                                    <li class="form-check form-switch"> <input class="form-check-input" type="checkbox" role="switch"  required="" id="Management"><label
+                                    <li class="form-check form-switch"> <input oninput="handelChangeService()" class="form-check-input" type="checkbox" role="switch"  required="" id="Management"><label
                                             for="Management">Social Media Management</label></li>
-                                    <li class="form-check form-switch"> <input class="form-check-input" type="checkbox" role="switch"  required="" id="Design"><label for="Design">Graphic
+                                    <li class="form-check form-switch"> <input oninput="handelChangeService()" class="form-check-input" type="checkbox" role="switch"  required="" id="Design"><label for="Design">Graphic
                                             Design & Content Creation</label></li>
-                                    <li class="form-check form-switch"> <input class="form-check-input" type="checkbox" role="switch"  required="" id="Others"><label
+                                    <li class="form-check form-switch"> <input oninput="handelChangeService()" class="form-check-input" type="checkbox" role="switch"  required="" id="Others"><label
                                             for="Others">Others..</label> </li>
-
+                                </ul>
                                     <div class="col-md-12 mt-3">
-                                        <textarea class="form-control" name="message" rows="6" placeholder="Message"
+                                        <textarea class="form-control" id="message" name="message" rows="6" placeholder="Message"
                                             required=""></textarea>
                                     </div>
                                     <div class="col-md-12 text-center mt-3">
 
-                                        <button type="submit">Send Message</button>
+                                        <button onclick="contactUs(this)" type="submit">Send Message</button>
                                     </div>
 
                             </div>
@@ -197,6 +197,8 @@
     <!-- filter animation -->
     <script src="lib/isotope-layout/isotope.pkgd.min.js"></script>
     <!-- main js file ------------ -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/main.js"></script>
+    <script src="js/contact.js"></script>
 
 </html>
