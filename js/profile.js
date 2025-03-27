@@ -53,8 +53,9 @@ function getPackages( ) {
         })
         .then(response => response.json())
         .then(data => {
-            
-            const package = data;
+            log(data);
+            if (data.length > 0) {
+                const package = data;
             document.getElementById("package_name").innerHTML = package[0].package_name;
             document.getElementById("planDuration").innerHTML = package[0].period_display;
             document.getElementById("planPrice").innerHTML = package[0].price_paid;
@@ -84,6 +85,7 @@ function getPackages( ) {
                     `
                 )
             })
+            }
             // document.getElementById("progressBar").getAttribute("aria-valuenow") = `${daysLeft / totalDays * 100}`;
             
         })
@@ -112,6 +114,12 @@ function getOrders() {
             
             const orders = data;
             ordersElement.innerHTML = "";
+            if (orders.length === 0) {
+                ordersElement.innerHTML = `
+                    <tr>
+                        <td colspan="6" style="text-align: center;">No orders found</td>
+                    </tr>`
+            }
             orders.map((order , index) => (
                 ordersElement.innerHTML+= `
                     <tr>
@@ -203,4 +211,99 @@ function showAccount(btn) {
     document.getElementById("main-content-orders").style.display = "block";
     btn.classList.add("active");
     getOrders()
+}
+
+function changePassword(btn) {
+    let newPassword = document.getElementById("newPassword");
+    let confirmPassword = document.getElementById("confirmPassword");
+    let oldPassword = document.getElementById("oldPassword");
+    
+    if (newPassword.value === confirmPassword.value && newPassword.value.length > 6) {
+        btn.innerHTML = "Loading...";
+        btn.disabled = true;
+        // Reset border colors
+        newPassword.style.border = "1px solid #666";
+        newPassword.style.border = "1px solid #666";
+        oldPassword.style.border = "1px solid #666";
+
+        try {
+            fetch(`${baseUrl}/accounts/change-password/`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                    ,Authorization: `Bearer ${token}`
+                },
+                body: JSON.stringify({
+                    old_password: oldPassword.value,
+                    new_password: newPassword.value,
+                    confirm_password: confirmPassword.value,
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.detail === "Password updated successfully") {
+                    Swal.fire({
+                        icon: "success",
+                        title: "Password updated successfully",
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                    btn.innerHTML = "changed";
+                    newPassword.value = "";
+                    confirmPassword.value = "";
+                    oldPassword.value = "";
+                    setTimeout(() => {
+                        btn.innerHTML = "Change Password";
+                        btn.disabled = false;
+                    }, 5000);
+                }else if (data.old_password) {
+                    Swal.fire({
+                        icon: "error",
+                        title: data.old_password,
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                    btn.innerHTML = "Change Password";
+                    newPassword.value = "";
+                    confirmPassword.value = "";
+                    oldPassword.value = "";
+                    btn.disabled = false;
+                    oldPassword.style.border = "1px solid red";
+                } else {
+                    Swal.fire({
+                        icon: "error",
+                        title: data.message,
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                    btn.innerHTML = "Change Password";
+                    newPassword.value = "";
+                    confirmPassword.value = "";
+                    oldPassword.value = "";
+                    btn.disabled = false;
+                }
+                
+                
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                btn.innerHTML = "Change Password";
+                btn.disabled = false;
+            });
+        } catch (error) {
+            console.log(error);
+            btn.innerHTML = "Change Password";
+            btn.disabled = false;
+            
+        }
+    } else {
+        // Set border colors to red for invalid inputs
+        if (newPassword.value.length < 6) {
+            newPassword.style.border = "1px solid red";
+        }
+        if (newPassword.value !== confirmPassword.value) {
+            newPassword.style.border = "1px solid red";
+            confirmPassword.style.border = "1px solid red";
+        }
+    }
 }

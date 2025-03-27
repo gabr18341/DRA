@@ -103,7 +103,7 @@ function checkout() {
             amount: total_price * 100,
             currency: 'SAR',
             description: `Order # ${cart_det}`,
-            publishable_api_key: 'pk_test_UnMo2i4ni8F6mYx1wJgTe1SwMpLhnYJCCxshhbHw',
+            publishable_api_key: 'pk_live_YEE2KvDZC16CkhdzwjBSp1RSUGePKo32fQ1wkkFF',
             callback_url: 'http://192.168.100.40:8000/api/payment/moyasar/callback/', // prossesing url
             methods: ['creditcard', "applepay "],
             metadata: {

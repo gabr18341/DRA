@@ -63,7 +63,7 @@ if (document.querySelector('header')) {
                     <div id="mobile-menu" class="mobile-nav">
                         <i class='bx bxs-grid'></i>
                     </div>
-                    <a href="login.html" class="main-btn">
+                    <a href="${userDetails ? '/profile/user-view-account.html' : 'login.html'}" class="main-btn">
                         <span class="d-flex align-items-center gap-1 "><i class='bx bx-user-circle fs-4'></i> <span style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap;max-width: 100px;">${userDetails ? userDetails.first_name : 'Sign in'}</span>  </span>
                     </a>
                     <a href="tel:+966920012778" class="main-btn">

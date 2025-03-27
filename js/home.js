@@ -1,6 +1,6 @@
 const userAuth = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null;
 const token = localStorage.getItem('token') ? localStorage.getItem('token') : null;
-const base_URL = 'http://192.168.8.209:8000/api';
+// const baseUrl = 'http://192.168.8.209:8000/api';
 const errElement = document.getElementById("err");
 const categoriesElement = document.getElementById("categories");
 const productsElement = document.getElementById("products");
@@ -13,7 +13,7 @@ const checkoutBtn = document.getElementById("checkout-total");
 // handel signup ****************************************
 function getCategory() {
     try {
-        fetch(`${base_URL}/store/categories/`, {
+        fetch(`${baseUrl}/store/categories/`, {
             method: 'GET',
         })
         .then(response => response.json())
@@ -39,7 +39,7 @@ function getCategory() {
 getCategory();
 function getProducts(cat) {
     productsElement.innerHTML = "<div class='d-flex justify-content-center align-items-center py-2 w-100'><div class='loader'></div></div>";
-    let api = cat === "all" ? `${base_URL}/store/products/` : `${base_URL}/store/categories/${cat}/products/`;
+    let api = cat === "all" ? `${baseUrl}/store/products/` : `${baseUrl}/store/categories/${cat}/products/`;
     try {
         fetch(`${api}`, {
             method: 'GET',
@@ -85,7 +85,7 @@ getProducts("all");
 function getPackages() {
     packagesElement.innerHTML = "<div class='d-flex justify-content-center align-items-center py-2 w-100'><div class='loader'></div></div>";
     try {
-        fetch(`${base_URL}/packages/packages/`, {
+        fetch(`${baseUrl}/packages/packages/`, {
             method: 'GET',
         })
         .then(response => response.json())
@@ -128,7 +128,7 @@ getPackages();
 function getPartners() {
     partnersElement.innerHTML = "<div class='d-flex justify-content-center align-items-center py-2 w-100'><div class='loader'></div></div>";
     try {
-        fetch(`${base_URL}/info/partners/`, {
+        fetch(`${baseUrl}/info/partners/`, {
             method: 'GET',
         })
         .then(response => response.json())
@@ -163,7 +163,7 @@ getPartners();
 function getProInCart() {
     proInCartElement.innerHTML = "<div class='d-flex justify-content-center align-items-center py-2 w-100'><div class='loader'></div></div>";
     try {
-        fetch(`${base_URL}/store/carts/`, {
+        fetch(`${baseUrl}/store/carts/`, {
             method: 'POST',
             headers: {
                 Authorization: `Bearer ${token}`
@@ -214,7 +214,7 @@ function addToCart(btn) {
         btn.innerHTML = "Loading...";
         btn.disabled = true;
         try {
-            fetch(`${base_URL}/store/carts/add_item/`, {
+            fetch(`${baseUrl}/store/carts/add_item/`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -259,7 +259,7 @@ function deleteFromCart(btn) {
         btn.innerHTML = "...";
         btn.disabled = true;
         try {
-            fetch(`${base_URL}/store/carts/remove_item/`, {
+            fetch(`${baseUrl}/store/carts/remove_item/`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

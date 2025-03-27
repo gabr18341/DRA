@@ -14,7 +14,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>User View - Pages | Vuexy - Bootstrap Admin Template</title>
+    <title>profile - DRA | Digital Marketing Agency</title>
 
     <meta name="description" content="" />
 
@@ -233,9 +233,9 @@
                       </div>
                       <small><span id="daysRemaining" ></span> days remaining</small>
                       <div class="d-grid w-100 mt-6">
-                        <button class="btn btn-primary" data-bs-target="#upgradePlanModal" data-bs-toggle="modal">
+                        <!-- <button class="btn btn-primary" data-bs-target="#upgradePlanModal" data-bs-toggle="modal">
                           Upgrade Plan
-                        </button>
+                        </button> -->
                       </div>
                     </div>
                   </div>
@@ -325,6 +325,18 @@
                           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
                         <div class="row gx-6">
+                          <div class="mb-4 col-12 form-password-toggle">
+                            <label class="form-label" for="oldPassword">Old Password</label>
+                            <div class="input-group input-group-merge">
+                              <input
+                                class="form-control"
+                                type="password"
+                                id="oldPassword"
+                                name="oldPassword"
+                                placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" />
+                              <span class="input-group-text cursor-pointer"><i class="ti ti-eye-off"></i></span>
+                            </div>
+                          </div>
                           <div class="mb-4 col-12 col-sm-6 form-password-toggle">
                             <label class="form-label" for="newPassword">New Password</label>
                             <div class="input-group input-group-merge">
@@ -351,7 +363,7 @@
                             </div>
                           </div>
                           <div>
-                            <button type="submit" class="btn btn-primary me-2">Change Password</button>
+                            <button type="button" onclick="changePassword(this)" class="btn btn-primary me-2">Change Password</button>
                           </div>
                         </div>
                       </form>

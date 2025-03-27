@@ -62,13 +62,11 @@ function handelSignUp(btn) {
                     });
                     errElement.innerHTML = "Account created successfully";
                     errElement.style.color = "green";
-                    if (productInCart) {
-                        signInAfterSignUp(email , password)
-                    } else {
-                        setTimeout(() => {
-                            window.location.href = returnPage ? `${returnPage}.html` : "/profile/user-view-account.html";
-                        }, 1700);
-                    }
+                    
+                    signInAfterSignUp(email , password)
+                    setTimeout(() => {
+                        window.location.href = returnPage ? `${returnPage}.html` : "/profile/user-view-account.html";
+                    }, 1700);
                 }
                 else {
                     errElement.innerHTML = `${data.email ? data.email[0] : ""} ${data.password ? data.password[0] : ""}`;
