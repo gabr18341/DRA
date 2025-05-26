@@ -663,7 +663,7 @@ a {
 .shop-section .shop-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 10px;
 }
@@ -679,8 +679,8 @@ a {
     -ms-border-radius: 6px;
     -o-border-radius: 6px;
     box-shadow: 0px 15px 15px -10px rgba(0,0,0,0.05);
-    min-width: 250px;
-    max-width: 100%;
+    width: calc(100% / 4 - 30px);
+    max-width: 300px;
     padding: 12px;
     cursor: pointer;
 }
@@ -1482,6 +1482,10 @@ footer .img-bottom-footer img {
         flex-grow: 1;
         margin-top: 20px;
     }
+    .shop-section .shop-container .product-item {
+        width: calc(100% / 2 - 30px);
+        max-width: 100%;
+    }
   }
 
   @media screen and (max-width: 779px) {
@@ -1489,6 +1493,10 @@ footer .img-bottom-footer img {
         /* position: relative;
         z-index: 1000; */
         background-color: white;
+    }
+
+    .shop-section .shop-container .product-item {
+        width: 100%;
     }
     
     .nav-header .container .social-icons-menu {
@@ -1837,3 +1845,171 @@ footer .img-bottom-footer img {
 .cart-page .cart-container table th:not(:first-child) {
     min-width: 150px;
 }
+
+/* kg btn *************************************************** */
+.kg-btn-container {
+    position: fixed;
+    z-index: 500;
+    top: 170px;
+    right: 0;
+}
+
+
+/* --------------------------------------------------------------- */
+
+
+.voltage-button {
+    position: relative;
+  }
+  
+  .voltage-button a {
+    color: white;
+    background: var(--sec-color);
+    padding: .5rem 1.5rem .5rem 2rem;
+    border-radius: 5rem 0 0 5rem;
+    border: 8px solid var(--main-color);
+    border-right: 0;
+    font-size: 1rem;
+    line-height: 1em;
+    letter-spacing: 0.075em;
+    transition: background 0.3s;
+    -webkit-border-radius: 5rem 0 0 5rem;
+    -moz-border-radius: 5rem 0 0 5rem;
+    -ms-border-radius: 5rem 0 0 5rem;
+    -o-border-radius: 5rem 0 0 5rem;
+}
+  
+  .voltage-button a:hover {
+    cursor: pointer;
+    background: #143745c2;
+  }
+  
+  .voltage-button a:hover + svg, .voltage-button a:hover + svg + .dots {
+    opacity: 1;
+  }
+  
+  .voltage-button svg {
+    display: block;
+    position: absolute;
+    top: -0.75em;
+    left: -0.25em;
+    width: calc(100% + 1.5em);
+    height: calc(100% + 2em);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s;
+    transition-delay: 0.1s;
+  }
+  
+  .voltage-button svg path {
+    stroke-dasharray: 100;
+    filter: url("#glow");
+  }
+  
+  .voltage-button svg path.line-1 {
+    stroke: var(--main-color);
+    stroke-dashoffset: 0;
+    animation: spark-1 3s linear infinite;
+  }
+  
+  .voltage-button svg path.line-2 {
+    stroke: var(--sec-color);
+    stroke-dashoffset: 500;
+    animation: spark-2 3s linear infinite;
+  }
+  
+  .voltage-button .dots {
+    opacity: 0;
+    transition: opacity 0.3s;
+    transition-delay: 0.4s;
+  }
+  
+  .voltage-button .dots .dot {
+    width: 1rem;
+    height: 1rem;
+    background: white;
+    border-radius: 100%;
+    position: absolute;
+    opacity: 0;
+  }
+  
+  .voltage-button .dots .dot-1 {
+    top: 0;
+    left: 20%;
+    animation: fly-up 3s linear infinite;
+  }
+  
+  .voltage-button .dots .dot-2 {
+    top: 0;
+    left: 55%;
+    animation: fly-up 3s linear infinite;
+    animation-delay: 0.5s;
+  }
+  
+  .voltage-button .dots .dot-3 {
+    top: 0;
+    left: 80%;
+    animation: fly-up 3s linear infinite;
+    animation-delay: 1s;
+  }
+  
+  .voltage-button .dots .dot-4 {
+    bottom: 0;
+    left: 30%;
+    animation: fly-down 3s linear infinite;
+    animation-delay: 2.5s;
+  }
+  
+  .voltage-button .dots .dot-5 {
+    bottom: 0;
+    left: 65%;
+    animation: fly-down 3s linear infinite;
+    animation-delay: 1.5s;
+  }
+  
+  @keyframes spark-1 {
+    to {
+      stroke-dashoffset: -1000;
+    }
+  }
+  
+  @keyframes spark-2 {
+    to {
+      stroke-dashoffset: -500;
+    }
+  }
+  
+  @keyframes fly-up {
+    0% {
+      opacity: 0;
+      transform: translateY(0) scale(0.2);
+    }
+  
+    5% {
+      opacity: 1;
+      transform: translateY(-1.5rem) scale(0.4);
+    }
+  
+    10%, 100% {
+      opacity: 0;
+      transform: translateY(-3rem) scale(0.2);
+    }
+  }
+  
+  @keyframes fly-down {
+    0% {
+      opacity: 0;
+      transform: translateY(0) scale(0.2);
+    }
+  
+    5% {
+      opacity: 1;
+      transform: translateY(1.5rem) scale(0.4);
+    }
+  
+    10%, 100% {
+      opacity: 0;
+      transform: translateY(3rem) scale(0.2);
+    }
+  }
+  

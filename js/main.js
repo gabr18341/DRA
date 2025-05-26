@@ -73,7 +73,8 @@ if (document.querySelector('header')) {
                 </div>
             </div>
             
-            </div>
+        </div>
+            
     `;
 }
 if (document.querySelector('footer')) {
